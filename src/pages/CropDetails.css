@@ -1,0 +1,354 @@
+/* ==========================================================================
+   CropVision - Crop Details Stylesheet
+   ========================================================================== */
+
+.crop-details-page {
+  padding-bottom: 5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Top Navigation Bar & Breadcrumbs
+   -------------------------------------------------------------------------- */
+.details-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.back-link-btn {
+  font-size: var(--font-size-sm);
+  padding: 0.5rem 1rem;
+}
+
+.breadcrumb-path {
+  font-size: var(--font-size-xs);
+}
+
+.breadcrumb-path .text-dark {
+  color: var(--color-text-dark);
+}
+
+/* --------------------------------------------------------------------------
+   1. CROP HERO CARD
+   -------------------------------------------------------------------------- */
+.crop-hero-card {
+  padding: 2rem;
+  margin-bottom: 3rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.crop-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.crop-hero-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface-muted);
+}
+
+.crop-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.crop-hero-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  color: var(--color-primary-deep);
+  font-weight: 700;
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--color-primary-border);
+}
+
+.crop-details-title {
+  font-size: var(--font-size-3xl);
+  color: var(--color-primary-deep);
+  margin-bottom: 0.85rem;
+  font-weight: 800;
+}
+
+.crop-details-description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+/* Quick Metrics Bar */
+.quick-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.metric-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: var(--color-cream-bg);
+  padding: 0.75rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.metric-icon {
+  font-size: 1.4rem;
+}
+
+.metric-title {
+  display: block;
+  font-size: 0.7rem;
+}
+
+.metric-value {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--color-primary-deep);
+  line-height: 1.2;
+}
+
+/* --------------------------------------------------------------------------
+   2. GROWING SPECIFICATIONS SECTION (6 Spec Cards)
+   -------------------------------------------------------------------------- */
+.growing-info-section {
+  margin-bottom: 3.5rem;
+}
+
+.info-cards-grid {
+  gap: 1.5rem;
+}
+
+.spec-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.spec-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-secondary-green);
+  box-shadow: var(--shadow-md);
+}
+
+.spec-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-primary-subtle);
+  border: 1px solid var(--color-primary-border);
+  border-radius: var(--radius-sm);
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.spec-content {
+  flex: 1;
+}
+
+.spec-heading {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.25rem;
+}
+
+.spec-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary-deep);
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+/* --------------------------------------------------------------------------
+   3. CULTIVATION TIPS SECTION
+   -------------------------------------------------------------------------- */
+.cultivation-tips-section {
+  margin-bottom: 3.5rem;
+}
+
+.tips-card {
+  background-color: var(--color-cream-bg);
+  border: 1px solid var(--color-border);
+  padding: 2.25rem 2rem;
+  border-radius: var(--radius-lg);
+}
+
+.tips-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tips-icon {
+  font-size: 2.25rem;
+}
+
+.tips-title {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary-deep);
+  margin-bottom: 0.2rem;
+}
+
+.tips-grid {
+  gap: 1.75rem;
+}
+
+.tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.tip-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.tip-item strong {
+  display: block;
+  font-size: var(--font-size-base);
+  color: var(--color-primary-deep);
+  margin-bottom: 0.25rem;
+}
+
+.tip-item p {
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   4. RELATED CROPS SECTION
+   -------------------------------------------------------------------------- */
+.related-crops-section {
+  padding-top: 1rem;
+}
+
+.related-crops-grid {
+  gap: 1.25rem;
+}
+
+.related-crop-card {
+  padding: 1rem 1.25rem;
+  background-color: var(--color-white);
+}
+
+.related-crop-thumbnail {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. CROP NOT FOUND (404 Error Card)
+   -------------------------------------------------------------------------- */
+.crop-not-found-card {
+  padding: 4rem 2rem;
+  background-color: var(--color-white);
+  border: 1.5px dashed var(--color-border-dark);
+  border-radius: var(--radius-lg);
+  margin-top: 2rem;
+}
+
+.not-found-icon {
+  font-size: 3.75rem;
+  display: block;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.not-found-title {
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary-deep);
+  margin-bottom: 0.75rem;
+}
+
+.not-found-description {
+  max-width: 480px;
+  margin: 0 auto 2rem;
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   6. RESPONSIVE MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 980px) {
+  .crop-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .crop-hero-image-wrapper {
+    height: 280px;
+  }
+
+  .quick-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .crop-hero-card {
+    padding: 1.25rem;
+  }
+
+  .crop-details-title {
+    font-size: 1.65rem;
+  }
+
+  .tips-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .tips-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

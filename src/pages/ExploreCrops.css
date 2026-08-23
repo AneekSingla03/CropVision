@@ -1,0 +1,262 @@
+/* ==========================================================================
+   CropVision - Explore Crops Stylesheet
+   ========================================================================== */
+
+.explore-crops-page {
+  padding-bottom: 5rem;
+}
+
+.explore-header {
+  margin-bottom: 2.25rem;
+}
+
+.explore-header .page-description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --------------------------------------------------------------------------
+   1. FILTER CARD & CONTROLS
+   -------------------------------------------------------------------------- */
+.filter-card {
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.75rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-top-row {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Search Bar */
+.search-box-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.9rem;
+  font-size: 1.1rem;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.search-input {
+  padding-left: 2.6rem;
+  padding-right: 2.5rem;
+  font-size: var(--font-size-base);
+  height: 44px;
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.search-clear-btn:hover {
+  color: var(--color-primary-deep);
+}
+
+/* Season Select */
+.season-select-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.season-label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-primary-deep);
+  white-space: nowrap;
+}
+
+.season-select {
+  height: 44px;
+  font-size: var(--font-size-sm);
+}
+
+/* Category Filter Pills */
+.category-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.category-label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-primary-deep);
+  white-space: nowrap;
+}
+
+.category-pills-list {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.category-pill-btn {
+  background-color: var(--color-cream-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-dark);
+  padding: 0.4rem 0.85rem;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.category-pill-btn:hover {
+  background-color: var(--color-primary-subtle);
+  border-color: var(--color-primary-border);
+  color: var(--color-primary-deep);
+}
+
+.category-pill-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 2px 4px rgba(37, 107, 70, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESULTS META BAR
+   -------------------------------------------------------------------------- */
+.results-meta-bar {
+  margin-bottom: 1.5rem;
+  padding: 0 0.25rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.clear-filters-link-btn {
+  font-size: var(--font-size-xs);
+  padding: 0.35rem 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. CROPS GRID (4 desktop, 2 tablet, 1 mobile)
+   -------------------------------------------------------------------------- */
+.crops-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. EMPTY STATE CARD
+   -------------------------------------------------------------------------- */
+.empty-state-card {
+  padding: 4rem 2rem;
+  background-color: var(--color-white);
+  border: 1.5px dashed var(--color-border-dark);
+  border-radius: var(--radius-lg);
+  margin-top: 1rem;
+}
+
+.empty-state-icon {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.empty-state-title {
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary-deep);
+  margin-bottom: 0.5rem;
+}
+
+.empty-state-description {
+  max-width: 480px;
+  margin: 0 auto 1.75rem;
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+}
+
+.empty-state-btn {
+  padding: 0.75rem 1.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. RESPONSIVE MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .crops-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .filter-top-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .season-select-wrapper {
+    width: 100%;
+  }
+
+  .season-select {
+    flex: 1;
+  }
+
+  .crops-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .filter-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .category-filter-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .category-pills-list {
+    width: 100%;
+  }
+
+  .category-pill-btn {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .crops-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .results-meta-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

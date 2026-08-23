@@ -1,0 +1,649 @@
+/* ==========================================================================
+   CropVision - Global Design System & Stylesheet
+   Theme: Nature-Inspired, Modern Agriculture Technology
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESIGN TOKENS (CSS Variables)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Nature & Agriculture Color Palette */
+  --color-primary-deep: #163e2b;       /* Deep Evergreen - Trustworthy & Grounded */
+  --color-primary: #256b46;            /* Forest Leaf Green - Main Brand Color */
+  --color-secondary-green: #3d8b5e;    /* Medium Foliage Green - Secondary Elements */
+  --color-light-green: #68b684;        /* Soft Sage Green - Accent & Highlights */
+  --color-primary-subtle: #eaf5ee;     /* Very Light Mint - Tinted Backgrounds */
+  --color-primary-border: #bce3cb;     /* Delicate Green Border for Badges/Alerts */
+
+  /* Neutral Backgrounds & Card Surfaces */
+  --color-cream-bg: #f7f9f5;          /* Warm Cream/Off-White Base Background */
+  --color-white: #ffffff;             /* Crisp Pure White Surface */
+  --color-surface-muted: #f0f4ee;     /* Muted Surface / Inset Background */
+
+  /* Typography Colors */
+  --color-text-dark: #19251f;         /* Dark Forest Charcoal - High Contrast */
+  --color-text-muted: #56685e;        /* Balanced Slate-Green - Secondary Text */
+  --color-text-light: #879b8f;        /* Soft Gray-Green - Subtle Meta Info */
+  --color-text-white: #ffffff;        /* Pure White for Inverted Containers */
+
+  /* Semantic Feedback Colors */
+  --color-success: #1b873f;           /* Positive / Healthy Crops */
+  --color-success-bg: #e6f7ec;
+  --color-success-border: #b4e8c3;
+
+  --color-warning: #b45309;           /* Alerts / Moderate Risk */
+  --color-warning-bg: #fef3c7;
+  --color-warning-border: #fde68a;
+
+  --color-error: #be123c;             /* Disease Outbreak / Errors */
+  --color-error-bg: #ffe4e6;
+  --color-error-border: #fecdd3;
+
+  /* Borders & Dividers */
+  --color-border: #dfe6dc;            /* Neutral Structural Border */
+  --color-border-dark: #c5d2c1;       /* Active / Focus Border */
+
+  /* Shadows (Subtle & Modern Elevation) */
+  --shadow-xs: 0 1px 2px rgba(22, 62, 43, 0.04);
+  --shadow-sm: 0 2px 4px rgba(22, 62, 43, 0.06);
+  --shadow-md: 0 4px 10px rgba(22, 62, 43, 0.08);
+  --shadow-lg: 0 10px 24px rgba(22, 62, 43, 0.10);
+
+  /* Border Radii */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+
+  /* Typography Scale */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.625rem;  /* 26px */
+  --font-size-3xl: 2rem;      /* 32px */
+  --font-size-4xl: 2.5rem;    /* 40px */
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+}
+
+/* --------------------------------------------------------------------------
+   2. BASE & RESET
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  background-color: var(--color-cream-bg);
+  color: var(--color-text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* --------------------------------------------------------------------------
+   3. TYPOGRAPHY HIERARCHY
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary-deep);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+h1 { font-size: var(--font-size-3xl); }
+h2 { font-size: var(--font-size-2xl); }
+h3 { font-size: var(--font-size-xl); font-weight: 600; }
+h4 { font-size: var(--font-size-lg); font-weight: 600; }
+
+p {
+  color: var(--color-text-dark);
+  margin-bottom: 0.75rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+}
+
+.text-xs {
+  font-size: var(--font-size-xs);
+}
+
+/* --------------------------------------------------------------------------
+   4. LAYOUT CONTAINERS & SECTIONS
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.container-sm {
+  max-width: 640px;
+}
+
+.container-lg {
+  max-width: 1280px;
+}
+
+.page-wrapper {
+  padding-top: 2.75rem;
+  padding-bottom: 4.5rem;
+}
+
+/* Standard Section Pattern */
+.section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.section-header.text-center {
+  text-align: center;
+}
+
+.section-title {
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary-deep);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  max-width: 620px;
+}
+
+.section-header.text-center .section-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Page Header Pattern */
+.page-header {
+  margin-bottom: 2.25rem;
+  text-align: left;
+}
+
+.page-header .page-badge {
+  margin-bottom: 0.75rem;
+}
+
+.page-header .page-title {
+  font-size: var(--font-size-3xl);
+  color: var(--color-primary-deep);
+  margin-bottom: 0.5rem;
+}
+
+.page-header .page-description {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+  max-width: 720px;
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   5. CARDS & SURFACES
+   -------------------------------------------------------------------------- */
+.card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  padding: 1.75rem;
+  transition: box-shadow var(--transition-base), border-color var(--transition-base), transform var(--transition-fast);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-dark);
+}
+
+.card-interactive {
+  cursor: pointer;
+}
+
+.card-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-secondary-green);
+}
+
+.card-header {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.card-body {
+  margin-bottom: 1.25rem;
+}
+
+.card-body:last-child {
+  margin-bottom: 0;
+}
+
+.card-footer {
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Card Variants */
+.card-highlight {
+  background-color: var(--color-primary-subtle);
+  border-color: var(--color-primary-border);
+}
+
+.card-muted {
+  background-color: var(--color-surface-muted);
+  border-color: var(--color-border);
+}
+
+/* Placeholder Box for In-Progress Modules */
+.placeholder-box {
+  background-color: var(--color-white);
+  border: 1.5px dashed var(--color-secondary-green);
+  border-radius: var(--radius-md);
+  padding: 2.75rem 2rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.placeholder-icon {
+  font-size: 2.75rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.placeholder-box h3 {
+  color: var(--color-primary-deep);
+  margin-bottom: 0.5rem;
+  font-size: var(--font-size-xl);
+}
+
+.placeholder-box p {
+  color: var(--color-text-muted);
+  max-width: 540px;
+  margin: 0 auto 1.5rem;
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   6. BUTTONS
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.35rem;
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  line-height: 1.4;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color var(--transition-fast), 
+              border-color var(--transition-fast), 
+              color var(--transition-fast),
+              transform var(--transition-fast),
+              box-shadow var(--transition-fast);
+  user-select: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-white);
+  box-shadow: 0 1px 3px rgba(37, 107, 70, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-deep);
+  box-shadow: 0 3px 6px rgba(22, 62, 43, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Secondary Button (Neutral Surface) */
+.btn-secondary {
+  background-color: var(--color-white);
+  color: var(--color-primary-deep);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-cream-bg);
+  border-color: var(--color-secondary-green);
+  color: var(--color-primary-deep);
+}
+
+/* Outline Button */
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary-deep);
+  border-color: var(--color-primary);
+}
+
+/* Button Sizing */
+.btn-sm {
+  padding: 0.45rem 0.85rem;
+  font-size: var(--font-size-xs);
+}
+
+.btn-lg {
+  padding: 0.85rem 1.75rem;
+  font-size: var(--font-size-base);
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   7. FORM INPUTS & CONTROLS
+   -------------------------------------------------------------------------- */
+.form-group {
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--color-text-dark);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  color: var(--color-text-dark);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.9rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-text-light);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 107, 70, 0.15);
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2356685e'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem 1rem;
+  padding-right: 2.25rem;
+  cursor: pointer;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-hint {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: 0.35rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. BADGES & CHIPS
+   -------------------------------------------------------------------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-xs);
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary-deep);
+  border: 1px solid var(--color-primary-border);
+  letter-spacing: 0.02em;
+}
+
+.badge-success {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+  border-color: var(--color-success-border);
+}
+
+.badge-warning {
+  background-color: var(--color-warning-bg);
+  color: var(--color-warning);
+  border-color: var(--color-warning-border);
+}
+
+.badge-error {
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+  border-color: var(--color-error-border);
+}
+
+.badge-neutral {
+  background-color: var(--color-surface-muted);
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+/* --------------------------------------------------------------------------
+   9. LINKS & ACCENTS
+   -------------------------------------------------------------------------- */
+.link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--color-primary-deep);
+  text-decoration: underline;
+}
+
+.link-subtle {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.link-subtle:hover {
+  color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   10. GRID & FLEX UTILITIES
+   -------------------------------------------------------------------------- */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-sm { gap: 0.5rem; }
+.gap-md { gap: 1rem; }
+.gap-lg { gap: 1.5rem; }
+
+/* --------------------------------------------------------------------------
+   11. RESPONSIVE DESIGN (MEDIA QUERIES)
+   -------------------------------------------------------------------------- */
+/* Tablet Breakpoint */
+@media (max-width: 900px) {
+  h1 { font-size: var(--font-size-2xl); }
+  h2 { font-size: var(--font-size-xl); }
+
+  .grid-3, 
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .page-wrapper {
+    padding-top: 2rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 600px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.15rem; }
+
+  .page-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .page-header .page-title {
+    font-size: 1.65rem;
+  }
+
+  .page-header .page-description {
+    font-size: var(--font-size-base);
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .btn-mobile-block {
+    width: 100%;
+  }
+}

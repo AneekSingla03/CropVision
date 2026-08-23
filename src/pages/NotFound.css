@@ -1,0 +1,70 @@
+/* ==========================================================================
+   CropVision - 404 NotFound Stylesheet
+   ========================================================================== */
+
+.not-found-page {
+  padding: 4rem 0 6rem;
+}
+
+.not-found-card {
+  padding: 3.5rem 2rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.not-found-emoji {
+  font-size: 3.75rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.not-found-code {
+  font-size: 5rem;
+  font-weight: 900;
+  color: var(--color-primary-deep);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.25rem;
+}
+
+.not-found-title {
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary-deep);
+  margin-bottom: 0.75rem;
+}
+
+.not-found-description {
+  font-size: var(--font-size-base);
+  max-width: 420px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.not-found-actions {
+  margin-bottom: 2rem;
+}
+
+.quick-recovery-links {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.recovery-pills-list {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.recovery-pills-list a {
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.recovery-pills-list a:hover {
+  background-color: var(--color-primary-subtle);
+  border-color: var(--color-primary-border);
+  color: var(--color-primary-deep);
+}

@@ -1,0 +1,161 @@
+/* ==========================================================================
+   CropVision - Footer Component Styles
+   ========================================================================== */
+
+.footer-container {
+  background-color: var(--color-primary-deep);
+  color: #e2ede6;
+  border-top: 3px solid var(--color-secondary-green);
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 1.75rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1.2fr 1.8fr;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Brand Column & Social Links
+   -------------------------------------------------------------------------- */
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.footer-icon {
+  font-size: 1.45rem;
+}
+
+.footer-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+}
+
+.footer-description {
+  color: #b8ccbf;
+  font-size: var(--font-size-sm);
+  line-height: 1.65;
+  max-width: 340px;
+  margin-bottom: 1.25rem;
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  color: #b8ccbf;
+  text-decoration: none;
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.social-icon:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Footer Links & Headings
+   -------------------------------------------------------------------------- */
+.footer-heading {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.15rem;
+}
+
+.footer-links,
+.footer-contact-info {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.65rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #b8ccbf;
+  font-size: var(--font-size-sm);
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--color-white);
+  padding-left: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Contact Information
+   -------------------------------------------------------------------------- */
+.footer-contact-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: #b8ccbf;
+  font-size: var(--font-size-sm);
+  margin-bottom: 0.75rem;
+  line-height: 1.45;
+}
+
+.contact-icon {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   Copyright Bottom Bar
+   -------------------------------------------------------------------------- */
+.footer-bottom {
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+  color: #8fa798;
+  font-size: var(--font-size-xs);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Media Queries
+   -------------------------------------------------------------------------- */
+@media (max-width: 980px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    padding: 2.75rem 1rem 1.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,68 @@
+/* ==========================================================================
+   CropVision - FeatureCard Component Styles
+   ========================================================================== */
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.75rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-secondary-green);
+}
+
+.feature-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.feature-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-primary-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 1.6rem;
+  border: 1px solid var(--color-primary-border);
+}
+
+.feature-tag {
+  font-size: 0.72rem;
+}
+
+.feature-card-body {
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+
+.feature-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary-deep);
+  margin-bottom: 0.5rem;
+}
+
+.feature-description {
+  line-height: 1.6;
+}
+
+.feature-card-footer {
+  margin-top: auto;
+}
+
+.feature-btn {
+  font-weight: 600;
+  justify-content: center;
+}

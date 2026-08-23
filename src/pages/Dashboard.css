@@ -1,0 +1,417 @@
+/* ==========================================================================
+   CropVision - Dashboard Stylesheet (Nested Layout Supported)
+   ========================================================================== */
+
+.dashboard-page {
+  padding-bottom: 5rem;
+}
+
+/* --------------------------------------------------------------------------
+   1. DASHBOARD TOPBAR
+   -------------------------------------------------------------------------- */
+.dashboard-topbar {
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.farmer-avatar-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background-color: var(--color-primary-subtle);
+  border: 1px solid var(--color-primary-border);
+  border-radius: 50%;
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+
+.farmer-welcome-title {
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary-deep);
+  margin-bottom: 0.15rem;
+}
+
+.logout-btn {
+  color: var(--color-error);
+  border-color: var(--color-error-border);
+  background-color: #fff9fa;
+}
+
+.logout-btn:hover {
+  background-color: var(--color-error);
+  color: var(--color-white);
+  border-color: var(--color-error);
+}
+
+/* --------------------------------------------------------------------------
+   2. NESTED ROUTE SUB-NAVIGATION TABS
+   -------------------------------------------------------------------------- */
+.dash-subnav-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+.dash-subnav-link {
+  padding: 0.6rem 1.15rem;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.dash-subnav-link:hover {
+  color: var(--color-primary-deep);
+  background-color: var(--color-cream-bg);
+}
+
+.dash-subnav-link.active {
+  background-color: var(--color-primary-deep);
+  color: var(--color-white);
+  box-shadow: var(--shadow-xs);
+}
+
+/* --------------------------------------------------------------------------
+   3. METRICS OVERVIEW (4 Stat Cards)
+   -------------------------------------------------------------------------- */
+.dashboard-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.dash-stat-card {
+  padding: 1.25rem 1.5rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-xs);
+}
+
+.stat-top {
+  margin-bottom: 0.5rem;
+}
+
+.stat-icon-sm {
+  font-size: 1.35rem;
+}
+
+.dash-stat-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-primary-deep);
+  margin-bottom: 0.4rem;
+  line-height: 1.1;
+}
+
+/* --------------------------------------------------------------------------
+   4. MAIN LAYOUT GRID
+   -------------------------------------------------------------------------- */
+.dashboard-main-layout-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1.1fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.dashboard-left-col,
+.dashboard-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.dash-section-card {
+  padding: 1.75rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+}
+
+.dash-card-header {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dash-card-title {
+  font-size: 1.15rem;
+  color: var(--color-primary-deep);
+  margin-bottom: 0.15rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. CROP HEALTH PROGRESS & TILES
+   -------------------------------------------------------------------------- */
+.health-breakdown-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.overall-health-meter {
+  padding: 1rem 1.25rem;
+  background-color: var(--color-cream-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-track-lg {
+  height: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.4s ease-in-out;
+}
+
+.health-status-tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.health-tile {
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.health-tile-healthy {
+  background-color: #f6fcf8;
+  border: 1px solid #bce3cb;
+}
+
+.health-tile-attention {
+  background-color: #fffbf5;
+  border: 1px solid #fde68a;
+}
+
+.health-tile-icon {
+  font-size: 1.35rem;
+}
+
+.health-tile-title {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary-deep);
+  display: block;
+}
+
+.health-tile-count {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-success);
+}
+
+/* --------------------------------------------------------------------------
+   6. WEATHER & MARKET PREVIEW WIDGETS
+   -------------------------------------------------------------------------- */
+.weather-preview-body {
+  background-color: var(--color-cream-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+}
+
+.weather-preview-main {
+  padding-bottom: 0.85rem;
+  margin-bottom: 0.85rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.weather-preview-icon {
+  font-size: 2.75rem;
+  line-height: 1;
+}
+
+.weather-preview-temp {
+  font-size: 1.75rem;
+  color: var(--color-primary-deep);
+  line-height: 1.1;
+  margin-bottom: 0.15rem;
+}
+
+.weather-preview-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.weather-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+/* Market Preview List */
+.market-preview-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.market-preview-row {
+  padding: 0.75rem 1rem;
+  background-color: var(--color-cream-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.market-crop-name {
+  color: var(--color-primary-deep);
+}
+
+.market-crop-price {
+  color: var(--color-primary-deep);
+}
+
+/* --------------------------------------------------------------------------
+   7. UPCOMING ACTIVITIES & SHORTCUTS
+   -------------------------------------------------------------------------- */
+.activities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.activity-item {
+  padding: 0.85rem 1rem;
+  background-color: var(--color-cream-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.activity-icon {
+  font-size: 1.4rem;
+}
+
+.activity-title {
+  color: var(--color-primary-deep);
+}
+
+.shortcuts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.shortcut-btn {
+  padding: 0.85rem 1.15rem;
+  background-color: var(--color-cream-bg);
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+  color: var(--color-text-dark);
+  transition: all var(--transition-fast);
+}
+
+.shortcut-btn:hover {
+  background-color: var(--color-white);
+  border-color: var(--color-secondary-green);
+  transform: translateX(4px);
+}
+
+.shortcut-icon {
+  font-size: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. DASHBOARD CROPS DETAILED VIEW
+   -------------------------------------------------------------------------- */
+.crop-detailed-card {
+  padding: 1.5rem;
+  background-color: var(--color-cream-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.crop-detail-title {
+  font-size: 1.2rem;
+  color: var(--color-primary-deep);
+  margin-bottom: 0.2rem;
+}
+
+.crop-specs-grid {
+  padding: 0.85rem 1rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  gap: 0.75rem;
+}
+
+.crop-alert-footer {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* --------------------------------------------------------------------------
+   9. RESPONSIVE MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 980px) {
+  .dashboard-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-main-layout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .crop-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-topbar {
+    padding: 1.25rem;
+  }
+
+  .dash-subnav-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dash-subnav-link {
+    text-align: center;
+  }
+
+  .dashboard-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .health-status-tiles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .crop-specs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .crop-alert-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

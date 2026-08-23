@@ -1,0 +1,92 @@
+/* ==========================================================================
+   CropVision - CropCard Component Styles
+   ========================================================================== */
+
+.crop-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.crop-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-secondary-green);
+}
+
+.crop-image-container {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  background-color: var(--color-surface-muted);
+  overflow: hidden;
+}
+
+.crop-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.crop-card:hover .crop-image {
+  transform: scale(1.04);
+}
+
+.crop-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(4px);
+  color: var(--color-primary-deep);
+  font-size: 0.72rem;
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--color-primary-border);
+}
+
+.crop-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.crop-header {
+  margin-bottom: 0.6rem;
+}
+
+.crop-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary-deep);
+  margin-bottom: 0.2rem;
+}
+
+.crop-category {
+  display: block;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.crop-description {
+  flex: 1;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+.crop-action {
+  margin-top: auto;
+}
+
+.crop-btn {
+  justify-content: center;
+  font-weight: 600;
+}
