@@ -64,7 +64,7 @@ export const crops = [
   {
     id: 'lentil',
     name: 'Lentil / Masoor (मसूर)',
-    image: 'https://images.unsplash.com/photo-1596797882870-8c33deeac224?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1708436478056-1872a208c010?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     category: 'Pulses',
     season: 'Rabi',
     description: 'Nutritious cool-season legume with high protein content and minimal irrigation demands during growth.',
@@ -78,7 +78,7 @@ export const crops = [
   {
     id: 'mustard',
     name: 'Mustard (सरसों)',
-    image: 'https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1631678783715-f27855736ed2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     category: 'Oilseeds',
     season: 'Rabi',
     description: 'Crucial oilseed crop with bright yellow blooms, cultivated for high-grade edible mustard oil and cattle feed.',
@@ -92,7 +92,7 @@ export const crops = [
   {
     id: 'cotton',
     name: 'Cotton (कपास)',
-    image: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1648908833245-86fe424f47a0?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     category: 'Cash Crops',
     season: 'Kharif',
     description: 'Major industrial cash crop known as White Gold, producing natural soft fiber for global textile production.',
@@ -106,7 +106,7 @@ export const crops = [
   {
     id: 'sugarcane',
     name: 'Sugarcane (गन्ना)',
-    image: 'https://images.unsplash.com/photo-1597916829826-02e5bb4a54e0?auto=format&fit=crop&w=800&q=80',
+    image: 'https://media.istockphoto.com/id/2166592645/photo/sugarcane-fields-sugarcane-is-the-worlds-largest-crop-by-production-quantity.webp?a=1&b=1&s=612x612&w=0&k=20&c=b3mGIkhPfqxD8Nd-21kYQgY9nxlUnJ2Vp5mSK1cY-H0=',
     category: 'Cash Crops',
     season: 'Kharif',
     description: 'High-value perennial tropical cash crop cultivated for sugar, jaggery, biofuel ethanol, and industrial molasses.',
@@ -162,7 +162,7 @@ export const crops = [
   {
     id: 'groundnut',
     name: 'Groundnut / Peanut (मूंगफली)',
-    image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1724058663142-e6e1a5e89f2d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JvdW5kbnV0fGVufDB8fDB8fHww',
     category: 'Oilseeds',
     season: 'Kharif',
     description: 'Valuable legume and oilseed cultivated for rich edible oil, roasted kernel consumption, and nutritious livestock feed.',
