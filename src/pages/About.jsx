@@ -54,14 +54,12 @@ function About() {
 
   const teamMembers = [
     {
-      name: 'Aneek Singla',
       role: 'Project Lead & Frontend Engineer',
       dept: 'Department of Computer Science & Engineering',
       icon: '💻',
       bio: 'Responsible for React architecture, component design system, responsive UI layouts, and state management.',
     },
     {
-      name: 'Prof. / Project Mentor',
       role: 'Faculty Project Guide',
       dept: 'Academic Project Supervisor',
       icon: '🎓',
