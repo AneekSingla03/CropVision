@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// Reusable Components
 import FeatureCard from '../components/FeatureCard';
 import CropCard from '../components/CropCard';
 
-// Static Data Sources
 import { cropsData } from '../data/cropsData';
 import {
   statisticsData,
@@ -15,32 +13,19 @@ import {
   dashboardPreviewData,
 } from '../data/homeData';
 
-// Page-Specific Styles
 import './Home.css';
 
-/**
- * Home Page Component
- * 
- * Demonstrates:
- * - Component composition and modular architecture
- * - List rendering with the array .map() method
- * - Reusable UI components (FeatureCard, CropCard)
- * - Navigation links with React Router
- * - 10 structured sections with nature-inspired styling
- */
 function Home() {
-  // Extract first 6 crops for the Featured Crops section
+
   const featuredCrops = cropsData.slice(0, 6);
 
   return (
     <div className="home-page">
-      {/* ===================================================================
-          1. HERO SECTION
-          =================================================================== */}
+
       <section className="hero-section">
         <div className="container">
           <div className="hero-grid">
-            {/* Hero Left: Text & Action CTAs */}
+   
             <div className="hero-text-content">
               <span className="badge badge-success hero-badge">
                 🌱 Smart Agriculture Platform
@@ -63,7 +48,7 @@ function Home() {
               </div>
             </div>
 
-            {/* Hero Right: Professional Agriculture Image Graphic */}
+         
             <div className="hero-image-wrapper">
               <div className="hero-image-card">
                 <img
@@ -91,9 +76,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ===================================================================
-          2. STATISTICS SECTION
-          =================================================================== */}
+
       <section className="stats-section">
         <div className="container">
           <div className="stats-grid">
@@ -111,9 +94,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ===================================================================
-          3. ABOUT CROPVISION SECTION
-          =================================================================== */}
+
       <section className="about-overview-section">
         <div className="container">
           <div className="about-overview-grid">
@@ -161,9 +142,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ===================================================================
-          4. CORE FEATURES SECTION (Using Reusable FeatureCard)
-          =================================================================== */}
+
       <section className="features-section">
         <div className="container">
           <div className="section-header text-center">
@@ -190,9 +169,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ===================================================================
-          5. HOW IT WORKS SECTION
-          =================================================================== */}
+
       <section className="how-it-works-section">
         <div className="container">
           <div className="section-header text-center">
@@ -218,9 +195,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ===================================================================
-          6. FEATURED CROPS SECTION (Using Reusable CropCard)
-          =================================================================== */}
+
       <section className="featured-crops-section">
         <div className="container">
           <div className="section-header-flex">
@@ -244,9 +219,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ===================================================================
-          7. WHY CROPVISION SECTION
-          =================================================================== */}
+
       <section className="why-us-section">
         <div className="container">
           <div className="section-header text-center">
@@ -278,9 +251,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ===================================================================
-          8. DASHBOARD PREVIEW SECTION (Visual Demonstration)
-          =================================================================== */}
+
       <section className="dashboard-preview-section">
         <div className="container">
           <div className="section-header text-center">
@@ -291,9 +262,8 @@ function Home() {
             </p>
           </div>
 
-          {/* Interactive Mock Dashboard Preview Container */}
           <div className="dashboard-preview-window card">
-            {/* Mock Window Top Bar */}
+  
             <div className="preview-topbar">
               <div className="preview-profile-info">
                 <span className="farmer-avatar">👨‍🌾</span>
@@ -309,9 +279,9 @@ function Home() {
               </Link>
             </div>
 
-            {/* Mock Dashboard Widgets Grid */}
+
             <div className="preview-widgets-grid">
-              {/* Widget 1: Crop Health */}
+
               <div className="card preview-widget-card">
                 <div className="widget-header">
                   <span className="widget-icon">🌱</span>
@@ -322,7 +292,7 @@ function Home() {
                 <span className="text-xs text-muted">{dashboardPreviewData.cropHealth.monitoredFields}</span>
               </div>
 
-              {/* Widget 2: Weather Insights */}
+
               <div className="card preview-widget-card">
                 <div className="widget-header">
                   <span className="widget-icon">⛅</span>
@@ -333,7 +303,7 @@ function Home() {
                 <span className="text-xs text-muted">{dashboardPreviewData.weatherAlert.rainForecast}</span>
               </div>
 
-              {/* Widget 3: Mandi Market Rate */}
+   
               <div className="card preview-widget-card">
                 <div className="widget-header">
                   <span className="widget-icon">📈</span>
@@ -346,7 +316,7 @@ function Home() {
                 <span className="text-xs text-muted">{dashboardPreviewData.marketPriceSummary.crop}</span>
               </div>
 
-              {/* Widget 4: Upcoming Activity */}
+     
               <div className="card preview-widget-card">
                 <div className="widget-header">
                   <span className="widget-icon">🚜</span>
@@ -363,9 +333,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ===================================================================
-          9. FINAL CTA SECTION
-          =================================================================== */}
+
       <section className="final-cta-section">
         <div className="container container-sm text-center">
           <div className="final-cta-card">

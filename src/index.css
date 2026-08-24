@@ -1,80 +1,68 @@
-/* ==========================================================================
-   CropVision - Global Design System & Stylesheet
-   Theme: Nature-Inspired, Modern Agriculture Technology
-   ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   1. DESIGN TOKENS (CSS Variables)
-   -------------------------------------------------------------------------- */
 :root {
-  /* Nature & Agriculture Color Palette */
-  --color-primary-deep: #163e2b;       /* Deep Evergreen - Trustworthy & Grounded */
-  --color-primary: #256b46;            /* Forest Leaf Green - Main Brand Color */
-  --color-secondary-green: #3d8b5e;    /* Medium Foliage Green - Secondary Elements */
-  --color-light-green: #68b684;        /* Soft Sage Green - Accent & Highlights */
-  --color-primary-subtle: #eaf5ee;     /* Very Light Mint - Tinted Backgrounds */
-  --color-primary-border: #bce3cb;     /* Delicate Green Border for Badges/Alerts */
+  --color-primary-deep: #163e2b;      
+  --color-primary: #256b46;            
+  --color-secondary-green: #3d8b5e;    
+  --color-light-green: #68b684;       
+  --color-primary-subtle: #eaf5ee;
+  --color-primary-border: #bce3cb;
 
-  /* Neutral Backgrounds & Card Surfaces */
-  --color-cream-bg: #f7f9f5;          /* Warm Cream/Off-White Base Background */
-  --color-white: #ffffff;             /* Crisp Pure White Surface */
-  --color-surface-muted: #f0f4ee;     /* Muted Surface / Inset Background */
+  --color-cream-bg: #f7f9f5;          
+  --color-white: #ffffff;             
+  --color-surface-muted: #f0f4ee;     
 
-  /* Typography Colors */
-  --color-text-dark: #19251f;         /* Dark Forest Charcoal - High Contrast */
-  --color-text-muted: #56685e;        /* Balanced Slate-Green - Secondary Text */
-  --color-text-light: #879b8f;        /* Soft Gray-Green - Subtle Meta Info */
-  --color-text-white: #ffffff;        /* Pure White for Inverted Containers */
 
-  /* Semantic Feedback Colors */
-  --color-success: #1b873f;           /* Positive / Healthy Crops */
+  --color-text-dark: #19251f;         
+  --color-text-muted: #56685e;        
+  --color-text-light: #879b8f;        
+  --color-text-white: #ffffff;       
+
+  
+  --color-success: #1b873f;           
   --color-success-bg: #e6f7ec;
   --color-success-border: #b4e8c3;
 
-  --color-warning: #b45309;           /* Alerts / Moderate Risk */
+  --color-warning: #b45309;           
   --color-warning-bg: #fef3c7;
   --color-warning-border: #fde68a;
 
-  --color-error: #be123c;             /* Disease Outbreak / Errors */
+  --color-error: #be123c;             
   --color-error-bg: #ffe4e6;
   --color-error-border: #fecdd3;
 
-  /* Borders & Dividers */
-  --color-border: #dfe6dc;            /* Neutral Structural Border */
-  --color-border-dark: #c5d2c1;       /* Active / Focus Border */
 
-  /* Shadows (Subtle & Modern Elevation) */
+  --color-border: #dfe6dc;            
+  --color-border-dark: #c5d2c1;     
+
+  
   --shadow-xs: 0 1px 2px rgba(22, 62, 43, 0.04);
   --shadow-sm: 0 2px 4px rgba(22, 62, 43, 0.06);
   --shadow-md: 0 4px 10px rgba(22, 62, 43, 0.08);
   --shadow-lg: 0 10px 24px rgba(22, 62, 43, 0.10);
 
-  /* Border Radii */
+
   --radius-xs: 4px;
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 14px;
   --radius-full: 9999px;
 
-  /* Typography Scale */
+ 
   --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-size-xs: 0.75rem;    /* 12px */
-  --font-size-sm: 0.875rem;   /* 14px */
-  --font-size-base: 1rem;     /* 16px */
-  --font-size-lg: 1.125rem;   /* 18px */
-  --font-size-xl: 1.25rem;    /* 20px */
-  --font-size-2xl: 1.625rem;  /* 26px */
-  --font-size-3xl: 2rem;      /* 32px */
-  --font-size-4xl: 2.5rem;    /* 40px */
+  --font-size-xs: 0.75rem;    
+  --font-size-sm: 0.875rem;   
+  --font-size-base: 1rem;    
+  --font-size-lg: 1.125rem;   
+  --font-size-xl: 1.25rem;   
+  --font-size-2xl: 1.625rem; 
+  --font-size-3xl: 2rem;     
+  --font-size-4xl: 2.5rem;   
 
-  /* Transitions */
+
   --transition-fast: 0.15s ease;
   --transition-base: 0.25s ease;
 }
 
-/* --------------------------------------------------------------------------
-   2. BASE & RESET
-   -------------------------------------------------------------------------- */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -113,9 +101,6 @@ body {
   flex: 1;
 }
 
-/* --------------------------------------------------------------------------
-   3. TYPOGRAPHY HIERARCHY
-   -------------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-primary-deep);
   font-weight: 700;
@@ -149,9 +134,6 @@ p:last-child {
   font-size: var(--font-size-xs);
 }
 
-/* --------------------------------------------------------------------------
-   4. LAYOUT CONTAINERS & SECTIONS
-   -------------------------------------------------------------------------- */
 .container {
   width: 100%;
   max-width: 1160px;
@@ -174,7 +156,6 @@ p:last-child {
   padding-bottom: 4.5rem;
 }
 
-/* Standard Section Pattern */
 .section {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -206,7 +187,6 @@ p:last-child {
   margin-right: auto;
 }
 
-/* Page Header Pattern */
 .page-header {
   margin-bottom: 2.25rem;
   text-align: left;
@@ -229,9 +209,6 @@ p:last-child {
   line-height: 1.55;
 }
 
-/* --------------------------------------------------------------------------
-   5. CARDS & SURFACES
-   -------------------------------------------------------------------------- */
 .card {
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
@@ -276,7 +253,6 @@ p:last-child {
   border-top: 1px solid var(--color-border);
 }
 
-/* Card Variants */
 .card-highlight {
   background-color: var(--color-primary-subtle);
   border-color: var(--color-primary-border);
@@ -287,7 +263,6 @@ p:last-child {
   border-color: var(--color-border);
 }
 
-/* Placeholder Box for In-Progress Modules */
 .placeholder-box {
   background-color: var(--color-white);
   border: 1.5px dashed var(--color-secondary-green);
@@ -317,9 +292,6 @@ p:last-child {
   line-height: 1.6;
 }
 
-/* --------------------------------------------------------------------------
-   6. BUTTONS
-   -------------------------------------------------------------------------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -351,7 +323,6 @@ p:last-child {
   transform: translateY(1px);
 }
 
-/* Primary Button */
 .btn-primary {
   background-color: var(--color-primary);
   color: var(--color-text-white);
@@ -364,7 +335,6 @@ p:last-child {
   transform: translateY(-1px);
 }
 
-/* Secondary Button (Neutral Surface) */
 .btn-secondary {
   background-color: var(--color-white);
   color: var(--color-primary-deep);
@@ -378,7 +348,6 @@ p:last-child {
   color: var(--color-primary-deep);
 }
 
-/* Outline Button */
 .btn-outline {
   background-color: transparent;
   color: var(--color-primary);
@@ -391,7 +360,6 @@ p:last-child {
   border-color: var(--color-primary);
 }
 
-/* Button Sizing */
 .btn-sm {
   padding: 0.45rem 0.85rem;
   font-size: var(--font-size-xs);
@@ -407,9 +375,6 @@ p:last-child {
   width: 100%;
 }
 
-/* --------------------------------------------------------------------------
-   7. FORM INPUTS & CONTROLS
-   -------------------------------------------------------------------------- */
 .form-group {
   margin-bottom: 1.25rem;
   text-align: left;
@@ -473,9 +438,6 @@ p:last-child {
   margin-top: 0.35rem;
 }
 
-/* --------------------------------------------------------------------------
-   8. BADGES & CHIPS
-   -------------------------------------------------------------------------- */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -514,9 +476,6 @@ p:last-child {
   border-color: var(--color-border);
 }
 
-/* --------------------------------------------------------------------------
-   9. LINKS & ACCENTS
-   -------------------------------------------------------------------------- */
 .link {
   color: var(--color-primary);
   text-decoration: none;
@@ -539,9 +498,6 @@ p:last-child {
   color: var(--color-primary);
 }
 
-/* --------------------------------------------------------------------------
-   10. GRID & FLEX UTILITIES
-   -------------------------------------------------------------------------- */
 .grid {
   display: grid;
   gap: 1.5rem;
@@ -589,10 +545,6 @@ p:last-child {
 .gap-md { gap: 1rem; }
 .gap-lg { gap: 1.5rem; }
 
-/* --------------------------------------------------------------------------
-   11. RESPONSIVE DESIGN (MEDIA QUERIES)
-   -------------------------------------------------------------------------- */
-/* Tablet Breakpoint */
 @media (max-width: 900px) {
   h1 { font-size: var(--font-size-2xl); }
   h2 { font-size: var(--font-size-xl); }
@@ -609,7 +561,6 @@ p:last-child {
   }
 }
 
-/* Mobile Breakpoint */
 @media (max-width: 600px) {
   .container {
     padding-left: 1rem;

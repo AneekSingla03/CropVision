@@ -2,28 +2,17 @@ import React, { useState } from 'react';
 import { regionalWeatherData } from '../data/weatherData';
 import './Weather.css';
 
-/**
- * Weather Page Component (Evaluation 1 Demo)
- * 
- * Demonstrates:
- * - useState: Managing selectedRegion to display corresponding static weather profiles
- * - Array.prototype.map(): Rendering dynamic 5-day forecast cards and agricultural advisories
- * - Component-based structured layout with current conditions, 5-day forecast, and farming insights
- */
 function Weather() {
-  // 1. useState: Default to Punjab, India as specified in requirements
+ 
   const [selectedRegionKey, setSelectedRegionKey] = useState('punjab');
 
-  // Retrieve the static weather dataset for the chosen region
   const activeWeatherData = regionalWeatherData[selectedRegionKey] || regionalWeatherData.punjab;
   const { current, forecast5Day, farmingInsight, regionName, subDistrict, lastUpdated } = activeWeatherData;
 
   return (
     <div className="weather-page page-wrapper">
       <div className="container">
-        {/* ===================================================================
-            1. PAGE HEADER
-            =================================================================== */}
+    
         <header className="page-header weather-header text-center">
           <span className="badge page-badge">Agricultural Meteorology</span>
           <h1 className="page-title">Weather Intelligence</h1>
@@ -32,9 +21,7 @@ function Weather() {
           </p>
         </header>
 
-        {/* ===================================================================
-            2. LOCATION SELECTOR BAR (useState Demonstration)
-            =================================================================== */}
+
         <div className="region-selector-bar card flex flex-between">
           <div className="region-info">
             <span className="region-icon" role="img" aria-label="Location pin">📍</span>
@@ -61,12 +48,10 @@ function Weather() {
           </div>
         </div>
 
-        {/* ===================================================================
-            3. CURRENT WEATHER HERO CARD
-            =================================================================== */}
+ 
         <section className="card current-weather-card">
           <div className="current-weather-grid">
-            {/* Left: Main Temp & Condition */}
+        
             <div className="current-main-box">
               <span className="current-location-badge badge badge-success">
                 Current Conditions • {regionName}
@@ -85,9 +70,9 @@ function Weather() {
               </p>
             </div>
 
-            {/* Right: Key Meteorological Parameters (4 Core + 2 Extra) */}
+            
             <div className="current-metrics-grid">
-              {/* 1. Humidity */}
+             
               <div className="metric-tile">
                 <span className="metric-tile-icon">💧</span>
                 <div>
@@ -96,7 +81,7 @@ function Weather() {
                 </div>
               </div>
 
-              {/* 2. Wind Speed */}
+             
               <div className="metric-tile">
                 <span className="metric-tile-icon">💨</span>
                 <div>
@@ -105,7 +90,7 @@ function Weather() {
                 </div>
               </div>
 
-              {/* 3. Rain Chance */}
+             
               <div className="metric-tile">
                 <span className="metric-tile-icon">🌧️</span>
                 <div>
@@ -114,7 +99,7 @@ function Weather() {
                 </div>
               </div>
 
-              {/* 4. Feels Like */}
+             
               <div className="metric-tile">
                 <span className="metric-tile-icon">🌡️</span>
                 <div>
@@ -123,7 +108,7 @@ function Weather() {
                 </div>
               </div>
 
-              {/* 5. Soil Moisture */}
+            
               <div className="metric-tile">
                 <span className="metric-tile-icon">🪵</span>
                 <div>
@@ -132,7 +117,7 @@ function Weather() {
                 </div>
               </div>
 
-              {/* 6. UV Index */}
+              
               <div className="metric-tile">
                 <span className="metric-tile-icon">☀️</span>
                 <div>
@@ -144,9 +129,7 @@ function Weather() {
           </div>
         </section>
 
-        {/* ===================================================================
-            4. 5-DAY AGRICULTURAL FORECAST (Mapped via Array.map)
-            =================================================================== */}
+   
         <section className="section forecast-section">
           <div className="section-header">
             <span className="badge page-badge">Outlook</span>
@@ -177,12 +160,10 @@ function Weather() {
           </div>
         </section>
 
-        {/* ===================================================================
-            5. FARMING INSIGHT & ADVISORY SECTION
-            =================================================================== */}
+
         <section className="section farming-insight-section" style={{ paddingTop: 0 }}>
           <div className="card insight-main-card">
-            {/* Insight Header */}
+           
             <div className="insight-header">
               <span className="insight-icon" role="img" aria-label="Bulb">💡</span>
               <div>
@@ -193,7 +174,7 @@ function Weather() {
               </div>
             </div>
 
-            {/* Advisory Highlights Grid */}
+       
             <div className="grid-2 advisories-grid">
               {farmingInsight.advisories.map((adv) => (
                 <div key={adv.id} className="card advisory-subcard">

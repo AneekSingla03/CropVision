@@ -1,16 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-/**
- * DashboardOverview (Nested Child Component)
- * 
- * Demonstrates:
- * - Static demonstration data for Evaluation 1
- * - Reusable list rendering with .map()
- * - Clean overview widgets for crops, weather, market prices, and upcoming activities
- */
 function DashboardOverview() {
-  // Demo Crops List
+
   const myDemoCrops = [
     { id: 'c1', name: 'Wheat', variety: 'Sharbati HD-2967', season: 'Rabi', health: '95%', status: 'Healthy', badge: 'badge-success' },
     { id: 'c2', name: 'Rice', variety: 'Basmati 1121', season: 'Kharif', health: '90%', status: 'Healthy', badge: 'badge-success' },
@@ -18,14 +10,14 @@ function DashboardOverview() {
     { id: 'c4', name: 'Mustard', variety: 'Pusa Bold', season: 'Rabi', health: '94%', status: 'Healthy', badge: 'badge-success' },
   ];
 
-  // Static Market Prices
+
   const demoMarketPrices = [
     { crop: 'Wheat', price: '₹2,400/q', trend: '↑' },
     { crop: 'Rice', price: '₹3,100/q', trend: '↑' },
     { crop: 'Cotton', price: '₹7,200/q', trend: '↑' },
   ];
 
-  // Static Upcoming Activities
+
   const demoActivities = [
     { id: 'a1', title: 'Irrigation', date: 'Tomorrow, 07:00 AM', status: 'Scheduled', badge: 'badge-primary', icon: '💧' },
     { id: 'a2', title: 'Field Inspection', date: 'Feb 25, 2026', status: 'Planned', badge: 'badge-neutral', icon: '🔬' },
@@ -35,11 +27,8 @@ function DashboardOverview() {
 
   return (
     <div className="dashboard-nested-view">
-      {/* ===================================================================
-          1. 4 CORE STATISTIC CARDS
-          =================================================================== */}
+      
       <section className="dashboard-metrics-grid" aria-label="Farm statistics">
-        {/* Stat 1: My Crops */}
         <div className="card dash-stat-card">
           <div className="stat-top flex flex-between">
             <span className="stat-label text-xs text-muted font-semibold">My Crops</span>
@@ -49,7 +38,6 @@ function DashboardOverview() {
           <span className="badge badge-neutral text-xs">Active Field Crops</span>
         </div>
 
-        {/* Stat 2: Crop Health */}
         <div className="card dash-stat-card">
           <div className="stat-top flex flex-between">
             <span className="stat-label text-xs text-muted font-semibold">Crop Health</span>
@@ -61,7 +49,7 @@ function DashboardOverview() {
           <span className="badge badge-success text-xs">Good Health</span>
         </div>
 
-        {/* Stat 3: Weather */}
+    
         <div className="card dash-stat-card">
           <div className="stat-top flex flex-between">
             <span className="stat-label text-xs text-muted font-semibold">Weather</span>
@@ -71,7 +59,7 @@ function DashboardOverview() {
           <span className="badge badge-neutral text-xs">Partly Cloudy</span>
         </div>
 
-        {/* Stat 4: Market Price */}
+       
         <div className="card dash-stat-card">
           <div className="stat-top flex flex-between">
             <span className="stat-label text-xs text-muted font-semibold">Market Price</span>
@@ -84,13 +72,11 @@ function DashboardOverview() {
         </div>
       </section>
 
-      {/* ===================================================================
-          2. MAIN OVERVIEW GRID
-          =================================================================== */}
+      
       <div className="dashboard-main-layout-grid">
-        {/* Left Column: My Crops & Quick Shortcuts */}
+      
         <div className="dashboard-left-col">
-          {/* My Crops Section */}
+      
           <section className="card dash-section-card">
             <div className="dash-card-header flex flex-between">
               <div>
@@ -121,7 +107,7 @@ function DashboardOverview() {
             </div>
           </section>
 
-          {/* Quick Actions */}
+
           <section className="card dash-section-card">
             <h3 className="dash-card-title" style={{ marginBottom: '1rem' }}>
               Quick Farm Actions
@@ -162,9 +148,9 @@ function DashboardOverview() {
           </section>
         </div>
 
-        {/* Right Column: Weather, Market, Upcoming Activities */}
+       
         <div className="dashboard-right-col">
-          {/* Weather Card */}
+        
           <section className="card dash-section-card">
             <div className="dash-card-header flex flex-between">
               <div>
@@ -198,7 +184,7 @@ function DashboardOverview() {
             </div>
           </section>
 
-          {/* Market Card */}
+        
           <section className="card dash-section-card">
             <div className="dash-card-header flex flex-between">
               <div>
@@ -220,7 +206,7 @@ function DashboardOverview() {
             </div>
           </section>
 
-          {/* Upcoming Activities Card (Simple List) */}
+        
           <section className="card dash-section-card">
             <div className="dash-card-header flex flex-between">
               <div>

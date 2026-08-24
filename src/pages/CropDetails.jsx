@@ -3,20 +3,12 @@ import { useParams, Link } from 'react-router-dom';
 import { crops } from '../data/crops';
 import './CropDetails.css';
 
-/**
- * CropDetails Page Component (Dynamic Route)
- * 
- * Demonstrates:
- * - Dynamic route parameter handling via `useParams()` from react-router-dom
- * - Dynamic data lookup using Array.find()
- * - Conditional rendering: Rendering the detailed crop view or a friendly "Crop Not Found" 404 state
- * - Clean UI layout with growing parameters, cultivation tips, and related crops
- */
+
 function CropDetails() {
-  // 1. Extract dynamic :cropId parameter from the URL (e.g. /crops/wheat -> cropId = 'wheat')
+  
   const { cropId } = useParams();
 
-  // 2. Find the corresponding crop object from our static dataset (case-insensitive)
+  
   const crop = crops.find(
     (c) => c.id.toLowerCase() === cropId?.toLowerCase()
   );
@@ -27,7 +19,6 @@ function CropDetails() {
     e.target.src = 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80';
   };
 
-  // 3. INVALID CROP: If no matching crop was found, display friendly error state
   if (!crop) {
     return (
       <div className="crop-details-page page-wrapper">
@@ -50,16 +41,14 @@ function CropDetails() {
     );
   }
 
-  // Find 3 other recommended crops in the same category or overall catalog
   const relatedCrops = crops
     .filter((c) => c.id !== crop.id)
     .slice(0, 3);
 
-  // 4. VALID CROP: Render full agronomic details
   return (
     <div className="crop-details-page page-wrapper">
       <div className="container">
-        {/* Top Navigation / Breadcrumb */}
+        
         <div className="details-nav-bar">
           <Link to="/crops" className="btn btn-secondary btn-sm back-link-btn">
             ← Back to All Crops
@@ -69,12 +58,10 @@ function CropDetails() {
           </span>
         </div>
 
-        {/* ===================================================================
-            1. CROP OVERVIEW HERO CARD
-            =================================================================== */}
+       
         <section className="card crop-hero-card">
           <div className="crop-hero-grid">
-            {/* Left: High-resolution Photography */}
+            
             <div className="crop-hero-image-wrapper">
               <img
                 src={crop.image}
@@ -85,7 +72,7 @@ function CropDetails() {
               <span className="badge crop-hero-badge">{crop.season} Season</span>
             </div>
 
-            {/* Right: Overview & Badges */}
+            
             <div className="crop-hero-info">
               <div className="flex gap-sm" style={{ marginBottom: '0.75rem' }}>
                 <span className="badge badge-success">{crop.category}</span>
@@ -95,7 +82,7 @@ function CropDetails() {
               <h1 className="crop-details-title">{crop.name}</h1>
               <p className="crop-details-description">{crop.description}</p>
 
-              {/* Quick Metrics Bar */}
+              
               <div className="quick-metrics-grid">
                 <div className="metric-pill">
                   <span className="metric-icon">🌡️</span>
@@ -125,9 +112,6 @@ function CropDetails() {
           </div>
         </section>
 
-        {/* ===================================================================
-            2. GROWING INFORMATION & SPECIFICATIONS (6 Core Parameters)
-            =================================================================== */}
         <section className="growing-info-section">
           <div className="section-header">
             <span className="badge page-badge">Agronomic Specifications</span>
@@ -138,7 +122,6 @@ function CropDetails() {
           </div>
 
           <div className="grid-3 info-cards-grid">
-            {/* 1. Ideal Temperature */}
             <div className="card spec-card">
               <div className="spec-icon-box">🌡️</div>
               <div className="spec-content">
@@ -148,7 +131,7 @@ function CropDetails() {
               </div>
             </div>
 
-            {/* 2. Soil Type */}
+          
             <div className="card spec-card">
               <div className="spec-icon-box">🪵</div>
               <div className="spec-content">
@@ -158,7 +141,7 @@ function CropDetails() {
               </div>
             </div>
 
-            {/* 3. Water Requirement */}
+           
             <div className="card spec-card">
               <div className="spec-icon-box">💧</div>
               <div className="spec-content">
@@ -168,7 +151,6 @@ function CropDetails() {
               </div>
             </div>
 
-            {/* 4. Growing Duration */}
             <div className="card spec-card">
               <div className="spec-icon-box">⏱️</div>
               <div className="spec-content">
@@ -178,7 +160,6 @@ function CropDetails() {
               </div>
             </div>
 
-            {/* 5. Sowing Period */}
             <div className="card spec-card">
               <div className="spec-icon-box">🌱</div>
               <div className="spec-content">
@@ -188,7 +169,6 @@ function CropDetails() {
               </div>
             </div>
 
-            {/* 6. Harvest Period */}
             <div className="card spec-card">
               <div className="spec-icon-box">🚜</div>
               <div className="spec-content">
@@ -200,9 +180,6 @@ function CropDetails() {
           </div>
         </section>
 
-        {/* ===================================================================
-            3. BASIC CULTIVATION TIPS & BEST PRACTICES
-            =================================================================== */}
         <section className="cultivation-tips-section">
           <div className="card tips-card">
             <div className="tips-header">
@@ -259,9 +236,7 @@ function CropDetails() {
           </div>
         </section>
 
-        {/* ===================================================================
-            4. RELATED CROPS EXPLORATION
-            =================================================================== */}
+
         <section className="related-crops-section">
           <div className="flex flex-between" style={{ marginBottom: '1.5rem', flexWrap: 'wrap', gap: '0.75rem' }}>
             <div>

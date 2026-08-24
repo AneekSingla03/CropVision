@@ -1,14 +1,7 @@
-/* ==========================================================================
-   CropVision - Dashboard Stylesheet (Nested Layout Supported)
-   ========================================================================== */
-
 .dashboard-page {
   padding-bottom: 5rem;
 }
 
-/* --------------------------------------------------------------------------
-   1. DASHBOARD TOPBAR
-   -------------------------------------------------------------------------- */
 .dashboard-topbar {
   padding: 1.5rem 2rem;
   margin-bottom: 1.5rem;
@@ -50,9 +43,7 @@
   border-color: var(--color-error);
 }
 
-/* --------------------------------------------------------------------------
-   2. NESTED ROUTE SUB-NAVIGATION TABS
-   -------------------------------------------------------------------------- */
+
 .dash-subnav-bar {
   display: flex;
   align-items: center;
@@ -84,9 +75,6 @@
   box-shadow: var(--shadow-xs);
 }
 
-/* --------------------------------------------------------------------------
-   3. METRICS OVERVIEW (4 Stat Cards)
-   -------------------------------------------------------------------------- */
 .dashboard-metrics-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -117,9 +105,7 @@
   line-height: 1.1;
 }
 
-/* --------------------------------------------------------------------------
-   4. MAIN LAYOUT GRID
-   -------------------------------------------------------------------------- */
+
 .dashboard-main-layout-grid {
   display: grid;
   grid-template-columns: 1.4fr 1.1fr;
@@ -152,9 +138,6 @@
   margin-bottom: 0.15rem;
 }
 
-/* --------------------------------------------------------------------------
-   5. CROP HEALTH PROGRESS & TILES
-   -------------------------------------------------------------------------- */
 .health-breakdown-box {
   display: flex;
   flex-direction: column;
@@ -226,9 +209,7 @@
   color: var(--color-success);
 }
 
-/* --------------------------------------------------------------------------
-   6. WEATHER & MARKET PREVIEW WIDGETS
-   -------------------------------------------------------------------------- */
+
 .weather-preview-body {
   background-color: var(--color-cream-bg);
   border: 1px solid var(--color-border);
@@ -288,9 +269,7 @@
   color: var(--color-primary-deep);
 }
 
-/* --------------------------------------------------------------------------
-   7. UPCOMING ACTIVITIES & SHORTCUTS
-   -------------------------------------------------------------------------- */
+
 .activities-list {
   display: flex;
   flex-direction: column;
@@ -337,9 +316,7 @@
   font-size: 1.5rem;
 }
 
-/* --------------------------------------------------------------------------
-   8. DASHBOARD CROPS DETAILED VIEW
-   -------------------------------------------------------------------------- */
+
 .crop-detailed-card {
   padding: 1.5rem;
   background-color: var(--color-cream-bg);
@@ -366,9 +343,7 @@
   border-top: 1px solid var(--color-border);
 }
 
-/* --------------------------------------------------------------------------
-   9. RESPONSIVE MEDIA QUERIES
-   -------------------------------------------------------------------------- */
+
 @media (max-width: 980px) {
   .dashboard-metrics-grid {
     grid-template-columns: repeat(2, 1fr);

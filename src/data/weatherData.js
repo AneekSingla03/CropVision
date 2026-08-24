@@ -1,9 +1,3 @@
-/**
- * weatherData.js
- * 
- * Static demonstration dataset for CropVision Weather Intelligence.
- * Includes multi-region agricultural weather profiles, 5-day forecasts, and agronomic advisories.
- */
 export const regionalWeatherData = {
   punjab: {
     id: 'punjab',

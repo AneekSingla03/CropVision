@@ -2,20 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
 
-/**
- * Login Page Component (Evaluation 1 - Static Form Prototype)
- * 
- * Demonstrates:
- * - Professional UI layout for user sign-in
- * - Reusable form styling and components
- * - React Router Link navigation to /signup
- */
 function Login() {
   return (
     <div className="auth-page page-wrapper">
       <div className="container container-sm">
         <div className="card auth-card">
-          {/* Brand Logo & Header */}
+      
           <div className="auth-header text-center">
             <Link to="/" className="auth-brand-logo flex flex-center gap-xs">
               <span className="auth-icon" role="img" aria-label="Sprout">🌱</span>
@@ -27,9 +19,8 @@ function Login() {
             </p>
           </div>
 
-          {/* Static Login Form */}
           <form onSubmit={(e) => e.preventDefault()} noValidate>
-            {/* Email Input */}
+      
             <div className="form-group">
               <label htmlFor="login-email" className="form-label">
                 Email
@@ -42,7 +33,7 @@ function Login() {
               />
             </div>
 
-            {/* Password Input */}
+    
             <div className="form-group">
               <div className="flex flex-between" style={{ marginBottom: '0.4rem' }}>
                 <label htmlFor="login-password" className="form-label" style={{ marginBottom: 0 }}>
@@ -60,7 +51,7 @@ function Login() {
               />
             </div>
 
-            {/* Visual Login Button */}
+        
             <button
               type="submit"
               className="btn btn-primary btn-lg btn-block auth-submit-btn"
@@ -69,7 +60,7 @@ function Login() {
             </button>
           </form>
 
-          {/* Footer Link to Signup */}
+      
           <div className="auth-card-footer text-center">
             <p className="text-muted text-sm">
               Don't have an account?{' '}

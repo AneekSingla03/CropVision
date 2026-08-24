@@ -1,15 +1,8 @@
 import React from 'react';
 import './DiseaseDetection.css';
 
-/**
- * DiseaseDetection Page Component
- * 
- * Demonstrates:
- * - Clean, professional agriculture diagnostics user interface
- * - Component composition with feature cards, workflow steps, and photography guides
- */
 function DiseaseDetection() {
-  // 4 Steps: How CropVision Will Help
+  
   const plannedSteps = [
     {
       stepNumber: '01',
@@ -37,7 +30,7 @@ function DiseaseDetection() {
     },
   ];
 
-  // 4 Analysis Capability Feature Cards
+ 
   const analysisFeatureCards = [
     {
       icon: '🌱',
@@ -72,9 +65,7 @@ function DiseaseDetection() {
   return (
     <div className="disease-detection-page page-wrapper">
       <div className="container">
-        {/* ===================================================================
-            1. PAGE HEADER
-            =================================================================== */}
+       
         <header className="page-header text-center">
           <span className="badge page-badge">AI Diagnostic Interface</span>
           <h1 className="page-title">Crop Disease Detection</h1>
@@ -83,9 +74,7 @@ function DiseaseDetection() {
           </p>
         </header>
 
-        {/* ===================================================================
-            2. UPLOAD WORKSPACE AREA
-            =================================================================== */}
+
         <section className="card upload-workspace-card" aria-label="Upload interface">
           <div className="static-upload-dropzone">
             <div className="upload-icon-circle">
@@ -103,7 +92,7 @@ function DiseaseDetection() {
               <span className="badge badge-neutral">JPG, PNG or JPEG</span>
             </div>
 
-            {/* Visual Action Buttons */}
+            
             <div className="upload-buttons-container">
               <button
                 type="button"
@@ -122,9 +111,7 @@ function DiseaseDetection() {
           </div>
         </section>
 
-        {/* ===================================================================
-            3. HOW IT WILL WORK (4 Step Process)
-            =================================================================== */}
+
         <section className="section how-it-works-section">
           <div className="section-header text-center">
             <span className="badge page-badge">Operational Workflow</span>
@@ -148,9 +135,7 @@ function DiseaseDetection() {
           </div>
         </section>
 
-        {/* ===================================================================
-            4. PLANNED ANALYSIS FEATURES
-            =================================================================== */}
+
         <section className="section planned-features-section" style={{ paddingTop: 0 }}>
           <div className="section-header text-center">
             <span className="badge page-badge">Diagnostic Capabilities</span>
@@ -182,9 +167,7 @@ function DiseaseDetection() {
           </div>
         </section>
 
-        {/* ===================================================================
-            5. PHOTO GUIDELINES SECTION
-            =================================================================== */}
+
         <section className="section" style={{ paddingTop: 0 }}>
           <div className="card photo-guide-card">
             <div className="guide-header">

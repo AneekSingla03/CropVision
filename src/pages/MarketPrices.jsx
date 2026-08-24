@@ -2,32 +2,20 @@ import React, { useState, useMemo } from 'react';
 import { marketPricesData, marketSummaryMetrics } from '../data/marketData';
 import './MarketPrices.css';
 
-/**
- * MarketPrices Page Component (Evaluation 1 Demo)
- * 
- * Demonstrates:
- * - useState: Managing searchQuery, selectedCategory, and selectedTrend
- * - useMemo: Performance-optimized filtering across crop names, markets, and categories
- * - Array.prototype.map(): Rendering dynamic financial-style commodity tables and responsive cards
- * - Conditional Rendering: Handling active filter state and empty search results
- */
+
 function MarketPrices() {
-  // 1. State for text search (matches crop name or mandi market location)
+ 
   const [searchQuery, setSearchQuery] = useState('');
 
-  // 2. State for category filter
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  // 3. State for trend filter (All, Up, Down)
   const [selectedTrend, setSelectedTrend] = useState('All');
 
-  // Filter Categories
   const categories = ['All', 'Cereals', 'Oilseeds', 'Cash Crops', 'Vegetables'];
 
-  // 4. useMemo Hook: Calculates filtered commodity list
   const filteredMarkets = useMemo(() => {
     return marketPricesData.filter((item) => {
-      // Search matching (crop name or market location)
+  
       const query = searchQuery.toLowerCase().trim();
       const matchesSearch =
         query === '' ||
@@ -35,11 +23,9 @@ function MarketPrices() {
         item.market.toLowerCase().includes(query) ||
         item.state.toLowerCase().includes(query);
 
-      // Category matching
       const matchesCategory =
         selectedCategory === 'All' || item.category === selectedCategory;
 
-      // Trend matching
       const matchesTrend =
         selectedTrend === 'All' ||
         (selectedTrend === 'up' && item.trend === 'up') ||
@@ -49,7 +35,6 @@ function MarketPrices() {
     });
   }, [searchQuery, selectedCategory, selectedTrend]);
 
-  // Reset all active filters
   const handleClearFilters = () => {
     setSearchQuery('');
     setSelectedCategory('All');
@@ -61,9 +46,7 @@ function MarketPrices() {
   return (
     <div className="market-prices-page page-wrapper">
       <div className="container">
-        {/* ===================================================================
-            1. PAGE HEADER
-            =================================================================== */}
+       
         <header className="page-header market-header text-center">
           <span className="badge page-badge">Agricultural Economics</span>
           <h1 className="page-title">Market Prices</h1>
@@ -72,7 +55,6 @@ function MarketPrices() {
           </p>
         </header>
 
-        {/* Prototype Disclaimer Notice Card */}
         <div className="market-disclaimer-card">
           <span className="disclaimer-icon">ℹ️</span>
           <p className="text-xs text-muted">
@@ -81,9 +63,7 @@ function MarketPrices() {
           </p>
         </div>
 
-        {/* ===================================================================
-            2. MARKET SUMMARY HIGHLIGHT TILES
-            =================================================================== */}
+
         <div className="market-metrics-grid">
           <div className="card market-summary-card">
             <span className="summary-label text-xs text-muted">Monitored Commodities</span>
@@ -116,12 +96,10 @@ function MarketPrices() {
           </div>
         </div>
 
-        {/* ===================================================================
-            3. SEARCH & FILTER CONTROLS CARD
-            =================================================================== */}
+
         <section className="card market-filter-card" aria-label="Market search and filters">
           <div className="filter-controls-row">
-            {/* Search Input */}
+
             <div className="market-search-box">
               <span className="search-icon" role="img" aria-label="Search">🔍</span>
               <input
@@ -143,7 +121,7 @@ function MarketPrices() {
               )}
             </div>
 
-            {/* Trend Quick Filter Buttons */}
+
             <div className="trend-filter-group">
               <button
                 type="button"
@@ -169,7 +147,7 @@ function MarketPrices() {
             </div>
           </div>
 
-          {/* Category Filter Pills */}
+
           <div className="market-category-row">
             <span className="category-label">Category:</span>
             <div className="category-pills-list">
@@ -187,9 +165,7 @@ function MarketPrices() {
           </div>
         </section>
 
-        {/* ===================================================================
-            4. RESULTS META BAR
-            =================================================================== */}
+
         <div className="results-meta-bar flex flex-between">
           <div className="results-count-text">
             <strong>Showing {filteredMarkets.length}</strong> Markets / Crops
@@ -206,12 +182,9 @@ function MarketPrices() {
           )}
         </div>
 
-        {/* ===================================================================
-            5. MARKET COMMODITY DATA TABLE (Desktop & Tablet)
-            =================================================================== */}
         {filteredMarkets.length > 0 ? (
           <>
-            {/* Desktop / Tablet Table View */}
+ 
             <div className="card market-table-container">
               <table className="market-table">
                 <thead>
@@ -232,7 +205,7 @@ function MarketPrices() {
 
                     return (
                       <tr key={item.id} className="market-table-row">
-                        {/* Crop Name & Variety */}
+                       
                         <td>
                           <div className="crop-td-cell">
                             <strong className="crop-td-name">{item.crop}</strong>
@@ -240,7 +213,7 @@ function MarketPrices() {
                           </div>
                         </td>
 
-                        {/* Mandi & State */}
+                       
                         <td>
                           <div className="market-td-cell">
                             <span className="market-td-name">📍 {item.market}</span>
@@ -248,13 +221,13 @@ function MarketPrices() {
                           </div>
                         </td>
 
-                        {/* Price per Quintal */}
+                       
                         <td className="text-right">
                           <strong className="price-td-val">{item.formattedPrice}</strong>
                           <span className="text-xs text-muted block">/{item.unit.replace('per ', '')}</span>
                         </td>
 
-                        {/* Change Percentage */}
+                      
                         <td className="text-center">
                           <span
                             className={`change-badge ${
@@ -265,7 +238,7 @@ function MarketPrices() {
                           </span>
                         </td>
 
-                        {/* Trend Indicator */}
+                       
                         <td className="text-center">
                           <span
                             className={`trend-indicator-pill ${
@@ -276,12 +249,12 @@ function MarketPrices() {
                           </span>
                         </td>
 
-                        {/* Government MSP */}
+                        
                         <td className="text-right">
                           <span className="msp-td-val">{item.msp}</span>
                         </td>
 
-                        {/* Daily Arrival Volume */}
+                       
                         <td className="text-right">
                           <span className="volume-td-val text-sm text-muted">{item.arrivalVolume}</span>
                         </td>
@@ -292,7 +265,7 @@ function MarketPrices() {
               </table>
             </div>
 
-            {/* Mobile Responsive Cards View */}
+    
             <div className="market-mobile-cards-list">
               {filteredMarkets.map((item) => {
                 const isUp = item.trend === 'up';
@@ -347,7 +320,7 @@ function MarketPrices() {
             </div>
           </>
         ) : (
-          /* Empty State (Conditional Rendering) */
+      
           <div className="card empty-market-card text-center">
             <span className="empty-market-icon" role="img" aria-label="No data">📊</span>
             <h3 className="empty-market-title">No market commodity prices found</h3>

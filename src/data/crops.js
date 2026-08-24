@@ -1,9 +1,3 @@
-/**
- * crops.js
- * 
- * Main static dataset for CropVision containing exactly 12 crops.
- * Includes complete agronomic parameters, cultivation calendars, and verified high-quality imagery.
- */
 export const crops = [
   {
     id: 'wheat',

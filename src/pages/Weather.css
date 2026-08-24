@@ -1,7 +1,3 @@
-/* ==========================================================================
-   CropVision - Weather Intelligence Stylesheet
-   ========================================================================== */
-
 .weather-page {
   padding-bottom: 5rem;
 }
@@ -10,9 +6,6 @@
   margin-bottom: 2rem;
 }
 
-/* --------------------------------------------------------------------------
-   1. REGION SELECTOR BAR
-   -------------------------------------------------------------------------- */
 .region-selector-bar {
   padding: 1rem 1.5rem;
   margin-bottom: 2rem;
@@ -51,9 +44,6 @@
   background-color: var(--color-cream-bg);
 }
 
-/* --------------------------------------------------------------------------
-   2. CURRENT WEATHER HERO CARD
-   -------------------------------------------------------------------------- */
 .current-weather-card {
   padding: 2.25rem 2rem;
   margin-bottom: 3.5rem;
@@ -110,7 +100,6 @@
   margin-top: 0.5rem;
 }
 
-/* Metrics Grid */
 .current-metrics-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -147,9 +136,6 @@
   color: var(--color-primary-deep);
 }
 
-/* --------------------------------------------------------------------------
-   3. 5-DAY FORECAST SECTION
-   -------------------------------------------------------------------------- */
 .forecast-section {
   margin-bottom: 3.5rem;
 }
@@ -234,9 +220,6 @@
   color: var(--color-primary-deep);
 }
 
-/* --------------------------------------------------------------------------
-   4. FARMING INSIGHT SECTION
-   -------------------------------------------------------------------------- */
 .farming-insight-section {
   margin-bottom: 2rem;
 }
@@ -304,9 +287,6 @@
   line-height: 1.6;
 }
 
-/* --------------------------------------------------------------------------
-   5. RESPONSIVE MEDIA QUERIES
-   -------------------------------------------------------------------------- */
 @media (max-width: 980px) {
   .current-weather-grid {
     grid-template-columns: 1fr;

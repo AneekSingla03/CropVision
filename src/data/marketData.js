@@ -1,9 +1,3 @@
-/**
- * marketData.js
- * 
- * Static demonstration dataset for CropVision Market Prices.
- * Contains indicative mandi rates, commodity price trends, and MSP benchmarks.
- */
 export const marketPricesData = [
   {
     id: 'mkt-wheat',
@@ -16,7 +10,7 @@ export const marketPricesData = [
     formattedPrice: '₹2,275',
     unit: 'per quintal',
     changePercent: '+3.4%',
-    trend: 'up', // 'up' | 'down' | 'stable'
+    trend: 'up', 
     trendLabel: '↑ increase',
     msp: '₹2,275',
     arrivalVolume: '1,450 Bags',
@@ -177,7 +171,6 @@ export const marketPricesData = [
   },
 ];
 
-// Market Summary Stats
 export const marketSummaryMetrics = {
   totalCommodities: '10 Tracked',
   averageGain: '+1.7%',

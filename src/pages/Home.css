@@ -1,15 +1,8 @@
-/* ==========================================================================
-   CropVision - Home Page Stylesheet
-   ========================================================================== */
-
 .home-page {
   display: flex;
   flex-direction: column;
 }
 
-/* --------------------------------------------------------------------------
-   1. HERO SECTION
-   -------------------------------------------------------------------------- */
 .hero-section {
   padding: 4rem 0 3.5rem;
   background: linear-gradient(180deg, var(--color-white) 0%, var(--color-cream-bg) 100%);
@@ -62,7 +55,6 @@
   padding: 0.85rem 1.75rem;
 }
 
-/* Hero Image & Floating Cards */
 .hero-image-wrapper {
   position: relative;
 }
@@ -118,9 +110,7 @@
   color: var(--color-primary-deep);
 }
 
-/* --------------------------------------------------------------------------
-   2. STATISTICS SECTION
-   -------------------------------------------------------------------------- */
+
 .stats-section {
   padding: 3rem 0;
   background-color: var(--color-white);
@@ -168,9 +158,7 @@
   margin-bottom: 0.25rem;
 }
 
-/* --------------------------------------------------------------------------
-   3. ABOUT CROPVISION SECTION
-   -------------------------------------------------------------------------- */
+
 .about-overview-section {
   padding: 5rem 0;
   background-color: var(--color-cream-bg);
@@ -237,17 +225,13 @@
   font-weight: bold;
 }
 
-/* --------------------------------------------------------------------------
-   4. CORE FEATURES SECTION
-   -------------------------------------------------------------------------- */
+
 .features-section {
   padding: 5rem 0;
   background-color: var(--color-white);
 }
 
-/* --------------------------------------------------------------------------
-   5. HOW IT WORKS SECTION
-   -------------------------------------------------------------------------- */
+
 .how-it-works-section {
   padding: 5rem 0;
   background-color: var(--color-cream-bg);
@@ -288,9 +272,7 @@
   line-height: 1.6;
 }
 
-/* --------------------------------------------------------------------------
-   6. FEATURED CROPS SECTION
-   -------------------------------------------------------------------------- */
+
 .featured-crops-section {
   padding: 5rem 0;
   background-color: var(--color-white);
@@ -308,9 +290,6 @@
   padding: 0.65rem 1.25rem;
 }
 
-/* --------------------------------------------------------------------------
-   7. WHY CROPVISION SECTION
-   -------------------------------------------------------------------------- */
 .why-us-section {
   padding: 5rem 0;
   background-color: var(--color-cream-bg);
@@ -350,9 +329,7 @@
   line-height: 1.6;
 }
 
-/* --------------------------------------------------------------------------
-   8. DASHBOARD PREVIEW SECTION
-   -------------------------------------------------------------------------- */
+
 .dashboard-preview-section {
   padding: 5rem 0;
   background-color: var(--color-white);
@@ -437,9 +414,7 @@
   margin-bottom: 0.4rem;
 }
 
-/* --------------------------------------------------------------------------
-   9. FINAL CTA SECTION
-   -------------------------------------------------------------------------- */
+
 .final-cta-section {
   padding: 5rem 0 6rem;
   background: linear-gradient(180deg, var(--color-white) 0%, var(--color-cream-bg) 100%);
@@ -481,9 +456,7 @@
   flex-wrap: wrap;
 }
 
-/* --------------------------------------------------------------------------
-   10. RESPONSIVE MEDIA QUERIES (Desktop, Tablet, Mobile)
-   -------------------------------------------------------------------------- */
+
 @media (max-width: 980px) {
   .hero-grid {
     grid-template-columns: 1fr;

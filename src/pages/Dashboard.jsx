@@ -2,16 +2,7 @@ import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import './Dashboard.css';
 
-/**
- * Dashboard Component (Evaluation 1 Demo Dashboard Parent Layout)
- * 
- * Demonstrates:
- * - Direct public access to the dashboard in Evaluation 1
- * - Nested routing with <Outlet /> and sub-navigation tabs
- * - Static demonstration farmer interface
- */
 function Dashboard() {
-  // NavLink active class helper for sub-tabs
   const getSubNavClass = ({ isActive }) => {
     return isActive ? 'dash-subnav-link active' : 'dash-subnav-link';
   };
@@ -19,9 +10,7 @@ function Dashboard() {
   return (
     <div className="dashboard-page page-wrapper">
       <div className="container">
-        {/* ===================================================================
-            1. DASHBOARD HEADER
-            =================================================================== */}
+
         <header className="dashboard-topbar card flex flex-between">
           <div className="farmer-profile-meta flex align-center gap-md">
             <div className="farmer-avatar-circle" role="img" aria-label="Farmer avatar">
@@ -39,9 +28,6 @@ function Dashboard() {
           </div>
         </header>
 
-        {/* ===================================================================
-            2. NESTED ROUTE SUB-NAVIGATION TABS
-            =================================================================== */}
         <div className="dash-subnav-bar">
           <NavLink to="/dashboard/overview" className={getSubNavClass}>
             📊 Overview
@@ -54,9 +40,6 @@ function Dashboard() {
           </NavLink>
         </div>
 
-        {/* ===================================================================
-            3. NESTED ROUTE OUTLET (Child components render here)
-            =================================================================== */}
         <main className="dash-content-outlet">
           <Outlet />
         </main>

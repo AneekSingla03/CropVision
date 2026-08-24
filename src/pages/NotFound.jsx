@@ -2,13 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './NotFound.css';
 
-/**
- * 404 NotFound Page Component
- * 
- * Demonstrates:
- * - Catch-all route (*) pattern in React Router v6
- * - Friendly error UX with a clear call-to-action button to navigate back to Home
- */
 function NotFound() {
   return (
     <div className="not-found-page page-wrapper">

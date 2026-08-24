@@ -1,7 +1,3 @@
-/* ==========================================================================
-   CropVision - Market Prices Stylesheet
-   ========================================================================== */
-
 .market-prices-page {
   padding-bottom: 5rem;
 }
@@ -10,9 +6,6 @@
   margin-bottom: 1.5rem;
 }
 
-/* --------------------------------------------------------------------------
-   1. DISCLAIMER CARD
-   -------------------------------------------------------------------------- */
 .market-disclaimer-card {
   display: flex;
   align-items: center;
@@ -28,9 +21,6 @@
   font-size: 1.2rem;
 }
 
-/* --------------------------------------------------------------------------
-   2. MARKET SUMMARY TILES
-   -------------------------------------------------------------------------- */
 .market-metrics-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -59,9 +49,6 @@
   margin-bottom: 0.5rem;
 }
 
-/* --------------------------------------------------------------------------
-   3. SEARCH & FILTER CARD
-   -------------------------------------------------------------------------- */
 .market-filter-card {
   padding: 1.5rem 1.75rem;
   background-color: var(--color-white);
@@ -148,9 +135,6 @@
   flex-wrap: wrap;
 }
 
-/* --------------------------------------------------------------------------
-   4. FINANCIAL COMMODITY TABLE (Desktop & Tablet)
-   -------------------------------------------------------------------------- */
 .market-table-container {
   padding: 0;
   overflow: hidden;
@@ -233,7 +217,6 @@
   color: var(--color-primary-deep);
 }
 
-/* Financial Badges & Trend Indicators */
 .change-badge {
   display: inline-block;
   padding: 0.25rem 0.6rem;
@@ -286,9 +269,6 @@
   color: var(--color-text-muted);
 }
 
-/* --------------------------------------------------------------------------
-   5. MOBILE COMMODITY CARDS (Hidden on desktop, active on mobile)
-   -------------------------------------------------------------------------- */
 .market-mobile-cards-list {
   display: none;
   flex-direction: column;
@@ -326,9 +306,6 @@
   color: var(--color-primary-deep);
 }
 
-/* --------------------------------------------------------------------------
-   6. EMPTY STATE CARD
-   -------------------------------------------------------------------------- */
 .empty-market-card {
   padding: 4rem 2rem;
   background-color: var(--color-white);
@@ -355,9 +332,7 @@
   font-size: var(--font-size-base);
 }
 
-/* --------------------------------------------------------------------------
-   7. RESPONSIVE MEDIA QUERIES
-   -------------------------------------------------------------------------- */
+
 @media (max-width: 980px) {
   .market-metrics-grid {
     grid-template-columns: repeat(2, 1fr);

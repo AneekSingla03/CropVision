@@ -1,10 +1,5 @@
 import React from 'react';
 
-/**
- * DashboardActivities (Nested Child Component)
- * 
- * Displays static upcoming farming schedule and field tasks.
- */
 function DashboardActivities() {
   const activitiesList = [
     {

@@ -1,15 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.css';
 
-/**
- * Contact Page Component
- * 
- * Demonstrates:
- * - useState: Controlled form inputs (name, email, subject, message)
- * - Frontend validation: Checking empty fields, email regex format, and message length
- * - Conditional rendering: Switching between the active contact form and the success confirmation card
- * - Clean, beginner-friendly React event handling
- */
 function Contact() {
   // 1. State for form input values
   const [formData, setFormData] = useState({
@@ -19,13 +10,12 @@ function Contact() {
     message: '',
   });
 
-  // 2. State for field-level validation errors
+
   const [errors, setErrors] = useState({});
 
-  // 3. State to track successful submission
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // Helper to update formData state on input change
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -33,7 +23,7 @@ function Contact() {
       [name]: value,
     }));
 
-    // Clear the specific error as the user types
+
     if (errors[name]) {
       setErrors((prev) => ({
         ...prev,
@@ -42,32 +32,32 @@ function Contact() {
     }
   };
 
-  // Validation function
+
   const validateForm = () => {
     const newErrors = {};
 
-    // Validate Name
+   
     if (!formData.name.trim()) {
       newErrors.name = 'Full name is required.';
     }
 
-    // Validate Email
+  
     if (!formData.email.trim()) {
       newErrors.email = 'Email address is required.';
     } else {
-      // Standard email regex format check
+    
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(formData.email.trim())) {
         newErrors.email = 'Please enter a valid email address (e.g. name@example.com).';
       }
     }
 
-    // Validate Subject
+   
     if (!formData.subject.trim()) {
       newErrors.subject = 'Please enter an inquiry subject.';
     }
 
-    // Validate Message
+    
     if (!formData.message.trim()) {
       newErrors.message = 'Please enter your message.';
     } else if (formData.message.trim().length < 10) {
@@ -77,24 +67,24 @@ function Contact() {
     return newErrors;
   };
 
-  // Form submission handler
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const formValidationErrors = validateForm();
 
-    // If there are errors, update state and halt submission
+    
     if (Object.keys(formValidationErrors).length > 0) {
       setErrors(formValidationErrors);
       return;
     }
 
-    // If valid, clear errors and mark as submitted (Client-side demo)
+    
     setErrors({});
     setIsSubmitted(true);
   };
 
-  // Reset form to send another message
+  
   const handleResetForm = () => {
     setFormData({
       name: '',
@@ -109,9 +99,7 @@ function Contact() {
   return (
     <div className="contact-page page-wrapper">
       <div className="container">
-        {/* ===================================================================
-            1. PAGE HEADER
-            =================================================================== */}
+      
         <header className="page-header contact-header text-center">
           <span className="badge page-badge">Farmer Support & Feedback</span>
           <h1 className="page-title">Contact Support</h1>
@@ -120,14 +108,12 @@ function Contact() {
           </p>
         </header>
 
-        {/* ===================================================================
-            2. MAIN CONTACT GRID (Form on Left, Direct Info on Right)
-            =================================================================== */}
+     
         <div className="contact-main-grid">
-          {/* Left Column: Form or Success Card */}
+          
           <div className="card contact-form-card">
             {isSubmitted ? (
-              /* Success Confirmation Card */
+              
               <div className="submission-success-card text-center">
                 <div className="success-icon-circle">
                   <span role="img" aria-label="Success checkmark">✅</span>
@@ -152,7 +138,7 @@ function Contact() {
                 </button>
               </div>
             ) : (
-              /* Active Contact Form */
+             
               <>
                 <div className="form-card-header">
                   <h3 className="form-card-title">Send a Message</h3>
@@ -162,7 +148,7 @@ function Contact() {
                 </div>
 
                 <form onSubmit={handleSubmit} noValidate>
-                  {/* Name Input */}
+                  
                   <div className="form-group">
                     <label htmlFor="contact-name" className="form-label">
                       Full Name *
@@ -179,7 +165,7 @@ function Contact() {
                     {errors.name && <span className="error-message">{errors.name}</span>}
                   </div>
 
-                  {/* Email Input */}
+                 
                   <div className="form-group">
                     <label htmlFor="contact-email" className="form-label">
                       Email Address *
@@ -196,7 +182,7 @@ function Contact() {
                     {errors.email && <span className="error-message">{errors.email}</span>}
                   </div>
 
-                  {/* Subject Input */}
+                 
                   <div className="form-group">
                     <label htmlFor="contact-subject" className="form-label">
                       Subject / Topic *
@@ -213,7 +199,7 @@ function Contact() {
                     {errors.subject && <span className="error-message">{errors.subject}</span>}
                   </div>
 
-                  {/* Message Textarea */}
+                  
                   <div className="form-group">
                     <label htmlFor="contact-message" className="form-label">
                       Message / Inquiry *
@@ -238,9 +224,9 @@ function Contact() {
             )}
           </div>
 
-          {/* Right Column: Direct Contact Info & Support Highlights */}
+          
           <div className="contact-info-column">
-            {/* Direct Info Card */}
+            
             <div className="card info-block-card">
               <h3 className="info-block-title">Direct Contact Information</h3>
               <div className="info-items-list">
@@ -280,7 +266,7 @@ function Contact() {
               </div>
             </div>
 
-            {/* Quick Assistance Topics Card */}
+            
             <div className="card help-topics-card">
               <h4 className="help-topics-title">Common Support Areas</h4>
               <ul className="help-topics-list">

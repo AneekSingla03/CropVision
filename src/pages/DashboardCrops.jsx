@@ -1,11 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-/**
- * DashboardCrops (Nested Child Component)
- * 
- * Rendered inside <Outlet /> of <Dashboard /> when route is /dashboard/crops
- */
 function DashboardCrops() {
   const activeFarmCrops = [
     {
@@ -115,7 +110,7 @@ function DashboardCrops() {
                 </div>
               </div>
 
-              {/* Progress Bar */}
+             
               <div className="progress-track" style={{ margin: '0.75rem 0 1rem' }}>
                 <div
                   className="progress-fill"
@@ -126,7 +121,7 @@ function DashboardCrops() {
                 ></div>
               </div>
 
-              {/* Specs Grid */}
+              
               <div className="grid-4 crop-specs-grid" style={{ marginBottom: '1rem' }}>
                 <div className="spec-mini-item">
                   <span className="text-xs text-muted">Acreage:</span>
@@ -146,7 +141,7 @@ function DashboardCrops() {
                 </div>
               </div>
 
-              {/* Alert Bar & Link */}
+            
               <div className="crop-alert-footer flex flex-between">
                 <span className="text-xs" style={{ color: 'var(--color-primary-deep)' }}>
                   ⚡ <strong>Action Alert:</strong> {crop.actionAlert}

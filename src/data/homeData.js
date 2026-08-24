@@ -1,15 +1,3 @@
-/**
- * homeData.js
- * 
- * Static demonstration data for the CropVision Home page sections:
- * - Statistics
- * - Core Features (6 features)
- * - How It Works (4 steps)
- * - Why CropVision (4 benefits)
- * - Dashboard Preview mock metrics
- */
-
-// 1. Statistics Data
 export const statisticsData = [
   {
     id: 'stat-crops',
@@ -41,7 +29,7 @@ export const statisticsData = [
   },
 ];
 
-// 2. Core Features Data (6 Features)
+
 export const coreFeaturesData = [
   {
     id: 'feat-crop-info',
@@ -99,7 +87,6 @@ export const coreFeaturesData = [
   },
 ];
 
-// 3. How It Works (4 Steps)
 export const howItWorksSteps = [
   {
     stepNumber: '01',
@@ -127,7 +114,6 @@ export const howItWorksSteps = [
   },
 ];
 
-// 4. Why CropVision (4 Key Benefits)
 export const whyChooseUsBenefits = [
   {
     id: 'why-all-in-one',
@@ -159,7 +145,7 @@ export const whyChooseUsBenefits = [
   },
 ];
 
-// 5. Dashboard Preview Demo Metrics
+
 export const dashboardPreviewData = {
   farmerName: 'Ramesh Patel',
   location: 'Ludhiana, Punjab',

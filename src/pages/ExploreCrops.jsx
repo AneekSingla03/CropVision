@@ -3,43 +3,27 @@ import CropCard from '../components/CropCard';
 import { crops } from '../data/crops';
 import './ExploreCrops.css';
 
-/**
- * ExploreCrops Page Component
- * 
- * Demonstrates:
- * - useState: Managing searchQuery, selectedCategory, and selectedSeason
- * - useMemo: Performance-optimizing the filtered crop list calculation
- * - Array.prototype.map(): Rendering dynamic lists with unique keys
- * - Conditional Rendering: Switching between crop grid and empty search state
- * - Component Composition & Props: Passing crop objects into reusable <CropCard />
- */
 function ExploreCrops() {
-  // 1. State for search query
+  
   const [searchQuery, setSearchQuery] = useState('');
 
-  // 2. State for category filter
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  // 3. State for season filter
   const [selectedSeason, setSelectedSeason] = useState('All Seasons');
 
-  // Filter Categories & Seasons constants
   const categories = ['All', 'Cereals', 'Pulses', 'Oilseeds', 'Cash Crops', 'Vegetables'];
   const seasons = ['All Seasons', 'Kharif', 'Rabi', 'Zaid'];
 
-  // 4. useMemo Hook: Calculates filtered crops when search, category, or season changes
   const filteredCrops = useMemo(() => {
     return crops.filter((crop) => {
-      // Name search matching (case-insensitive)
+  
       const matchesSearch = crop.name
         .toLowerCase()
         .includes(searchQuery.toLowerCase().trim());
 
-      // Category matching
       const matchesCategory =
         selectedCategory === 'All' || crop.category === selectedCategory;
 
-      // Season matching
       const matchesSeason =
         selectedSeason === 'All Seasons' || crop.season.toLowerCase().includes(selectedSeason.toLowerCase());
 
@@ -47,22 +31,18 @@ function ExploreCrops() {
     });
   }, [searchQuery, selectedCategory, selectedSeason]);
 
-  // Helper function to reset all active filters
   const handleClearFilters = () => {
     setSearchQuery('');
     setSelectedCategory('All');
     setSelectedSeason('All Seasons');
   };
 
-  // Check if any filter is currently applied
   const isFiltered = searchQuery !== '' || selectedCategory !== 'All' || selectedSeason !== 'All Seasons';
 
   return (
     <div className="explore-crops-page page-wrapper">
       <div className="container">
-        {/* ===================================================================
-            1. PAGE HEADER
-            =================================================================== */}
+
         <header className="page-header explore-header text-center">
           <span className="badge page-badge">Agricultural Knowledge Base</span>
           <h1 className="page-title">Explore Crops</h1>
@@ -71,13 +51,10 @@ function ExploreCrops() {
           </p>
         </header>
 
-        {/* ===================================================================
-            2. FILTER CONTROLS BAR
-            =================================================================== */}
         <section className="card filter-card" aria-label="Crop search and filters">
-          {/* Top Row: Search Input & Season Dropdown */}
+     
           <div className="filter-top-row">
-            {/* Search Input */}
+         
             <div className="search-box-wrapper">
               <span className="search-icon" role="img" aria-label="Search">🔍</span>
               <input
@@ -99,7 +76,7 @@ function ExploreCrops() {
               )}
             </div>
 
-            {/* Season Select Filter */}
+           
             <div className="season-select-wrapper">
               <label htmlFor="season-select" className="season-label">
                 Season:
@@ -119,7 +96,7 @@ function ExploreCrops() {
             </div>
           </div>
 
-          {/* Bottom Row: Category Pill Buttons */}
+       
           <div className="category-filter-row">
             <span className="category-label">Category:</span>
             <div className="category-pills-list">
@@ -137,9 +114,7 @@ function ExploreCrops() {
           </div>
         </section>
 
-        {/* ===================================================================
-            3. RESULTS COUNT & ACTIVE FILTER META
-            =================================================================== */}
+
         <div className="results-meta-bar flex flex-between">
           <div className="results-count-text">
             <strong>Showing {filteredCrops.length}</strong> of {crops.length} agricultural crops
@@ -156,9 +131,7 @@ function ExploreCrops() {
           )}
         </div>
 
-        {/* ===================================================================
-            4. CROP GRID OR EMPTY STATE (Conditional Rendering)
-            =================================================================== */}
+       
         {filteredCrops.length > 0 ? (
           <div className="crops-grid">
             {filteredCrops.map((crop) => (

@@ -2,14 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './About.css';
 
-/**
- * About Page Component
- * 
- * Demonstrates:
- * - Structured informational hierarchy (Hero, Mission, Problem, Solution, Pillars, Impact, Team, CTA)
- * - Component composition and clean semantic layout
- * - Pure static presentation suitable for college project evaluation
- */
 function About() {
   // 4 Core Pillars
   const corePillars = [
@@ -35,7 +27,7 @@ function About() {
     },
   ];
 
-  // 4 Key Impacts: How CropVision Helps Farmers
+
   const farmerBenefits = [
     {
       num: '01',
@@ -59,7 +51,7 @@ function About() {
     },
   ];
 
-  // Academic Project Team
+
   const teamMembers = [
     {
       name: 'Aneek Singla',
@@ -80,9 +72,7 @@ function About() {
   return (
     <div className="about-page page-wrapper">
       <div className="container">
-        {/* ===================================================================
-            1. HERO / HEADER SECTION
-            =================================================================== */}
+       
         <header className="page-header about-hero-header text-center">
           <span className="badge page-badge">Academic Project • Evaluation 1</span>
           <h1 className="page-title">About CropVision</h1>
@@ -91,9 +81,7 @@ function About() {
           </p>
         </header>
 
-        {/* ===================================================================
-            2. OUR MISSION & PURPOSE
-            =================================================================== */}
+      
         <section className="card mission-card">
           <div className="mission-grid">
             <div className="mission-text">
@@ -121,9 +109,7 @@ function About() {
           </div>
         </section>
 
-        {/* ===================================================================
-            3. THE PROBLEM & OUR SOLUTION (Comparison Grid)
-            =================================================================== */}
+
         <section className="section problem-solution-section">
           <div className="grid-2 problem-solution-grid">
             {/* The Problem */}
@@ -142,7 +128,6 @@ function About() {
               </ul>
             </div>
 
-            {/* Our Solution */}
             <div className="card solution-card">
               <div className="card-top-icon solution-icon">🌱</div>
               <span className="badge badge-success" style={{ marginBottom: '0.5rem' }}>Our Approach</span>
@@ -160,9 +145,6 @@ function About() {
           </div>
         </section>
 
-        {/* ===================================================================
-            4. CORE PLATFORM PILLARS
-            =================================================================== */}
         <section className="section pillars-section" style={{ paddingTop: 0 }}>
           <div className="section-header text-center">
             <span className="badge page-badge">Architecture</span>
@@ -183,9 +165,7 @@ function About() {
           </div>
         </section>
 
-        {/* ===================================================================
-            5. HOW CROPVISION HELPS FARMERS
-            =================================================================== */}
+
         <section className="section impact-section" style={{ paddingTop: 0 }}>
           <div className="section-header text-center">
             <span className="badge page-badge">Practical Impact</span>
@@ -208,9 +188,6 @@ function About() {
           </div>
         </section>
 
-        {/* ===================================================================
-            6. ACADEMIC PROJECT TEAM SECTION
-            =================================================================== */}
         <section className="section team-section" style={{ paddingTop: 0 }}>
           <div className="section-header text-center">
             <span className="badge page-badge">Development Team</span>
@@ -239,9 +216,7 @@ function About() {
           </div>
         </section>
 
-        {/* ===================================================================
-            7. FINAL CALL-TO-ACTION
-            =================================================================== */}
+
         <section className="section about-cta-section" style={{ paddingTop: 0 }}>
           <div className="card about-cta-card text-center">
             <span className="cta-icon" role="img" aria-label="Sprout">🌱</span>
