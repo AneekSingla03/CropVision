@@ -1,0 +1,12 @@
+/* ==========================================================================
+   FormInput Component — Eval 2: Form Handling & Reusable Input Components
+   All base styles (.form-group, .form-label, .form-input, .input-error,
+   .error-message) already live in index.css and Contact.css.
+   This file holds only the FormInput-specific additions.
+   ========================================================================== */
+
+/* Required field asterisk marker */
+.form-required-mark {
+  color: var(--color-error);
+  font-weight: 700;
+}

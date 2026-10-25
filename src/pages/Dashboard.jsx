@@ -38,6 +38,9 @@ function Dashboard() {
           <NavLink to="/dashboard/activities" className={getSubNavClass}>
             📅 Activities
           </NavLink>
+          <NavLink to="/dashboard/journal" className={getSubNavClass}>
+            📖 Crop Journal
+          </NavLink>
         </div>
 
         <main className="dash-content-outlet">

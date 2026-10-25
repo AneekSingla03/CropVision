@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { useSavedCrops } from '../context/SavedCropsContext';
 import './Navbar.css';
 
 /**
@@ -11,8 +12,11 @@ import './Navbar.css';
  * - Event handling: clicking any navigation link automatically closes the mobile drawer
  */
 function Navbar() {
-  // useState hook: isMobileMenuOpen holds boolean state, setIsMobileMenuOpen updates it
+  // LOCAL state — mobile menu open/close (unrelated to global context, stays local)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // GLOBAL state — saved crop count from context
+  const { savedCropIds } = useSavedCrops();
 
   // Helper function to toggle the mobile menu state
   const toggleMobileMenu = () => {
@@ -62,6 +66,10 @@ function Navbar() {
             <li className="nav-item">
               <NavLink to="/crops" className={getNavLinkClass} onClick={closeMobileMenu}>
                 Crops
+                {/* Saved count badge — reads from global context, stays at 0 when nothing saved */}
+                {savedCropIds.length > 0 && (
+                  <span className="nav-saved-badge">{savedCropIds.length}</span>
+                )}
               </NavLink>
             </li>
             <li className="nav-item">

@@ -1,22 +1,27 @@
 import React, { useState, useMemo } from 'react';
 import { marketPricesData, marketSummaryMetrics } from '../data/marketData';
+import { useDebounce } from '../hooks/useDebounce';
 import './MarketPrices.css';
 
 
 function MarketPrices() {
  
   const [searchQuery, setSearchQuery] = useState('');
+  const debouncedSearchQuery = useDebounce(searchQuery, 300);
 
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const [selectedTrend, setSelectedTrend] = useState('All');
 
+  // Sorting state (Eval 2: Sorting control)
+  const [sortBy, setSortBy] = useState('default');
+
   const categories = ['All', 'Cereals', 'Oilseeds', 'Cash Crops', 'Vegetables'];
 
   const filteredMarkets = useMemo(() => {
-    return marketPricesData.filter((item) => {
-  
-      const query = searchQuery.toLowerCase().trim();
+    // 1. Filter using debounced search, category, and trend
+    const filtered = marketPricesData.filter((item) => {
+      const query = debouncedSearchQuery.toLowerCase().trim();
       const matchesSearch =
         query === '' ||
         item.crop.toLowerCase().includes(query) ||
@@ -33,15 +38,30 @@ function MarketPrices() {
 
       return matchesSearch && matchesCategory && matchesTrend;
     });
-  }, [searchQuery, selectedCategory, selectedTrend]);
+
+    // 2. Sort without mutating original array (uses numeric pricePerQuintal)
+    if (sortBy === 'price-asc') {
+      return [...filtered].sort((a, b) => a.pricePerQuintal - b.pricePerQuintal);
+    }
+    if (sortBy === 'price-desc') {
+      return [...filtered].sort((a, b) => b.pricePerQuintal - a.pricePerQuintal);
+    }
+
+    return filtered;
+  }, [debouncedSearchQuery, selectedCategory, selectedTrend, sortBy]);
 
   const handleClearFilters = () => {
     setSearchQuery('');
     setSelectedCategory('All');
     setSelectedTrend('All');
+    setSortBy('default');
   };
 
-  const isFiltered = searchQuery !== '' || selectedCategory !== 'All' || selectedTrend !== 'All';
+  const isFiltered =
+    searchQuery !== '' ||
+    selectedCategory !== 'All' ||
+    selectedTrend !== 'All' ||
+    sortBy !== 'default';
 
   return (
     <div className="market-prices-page page-wrapper">
@@ -144,6 +164,23 @@ function MarketPrices() {
               >
                 ↓ Losers
               </button>
+            </div>
+
+            {/* Sorting Control (Eval 2: Sorting Control) */}
+            <div className="market-sort-box">
+              <label htmlFor="market-sort-select" className="sort-label">
+                Sort:
+              </label>
+              <select
+                id="market-sort-select"
+                className="form-select market-sort-select"
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+              >
+                <option value="default">Default Order</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+              </select>
             </div>
           </div>
 

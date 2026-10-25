@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCropJournalStore } from '../store/cropJournalStore';
 
 function DashboardOverview() {
+  // Global Zustand state: Read journal notes count
+  const journalNotes = useCropJournalStore((state) => state.notes);
+
+  // Local state for interactive activity tabs
+  const [activityTab, setActivityTab] = useState('all');
 
   const myDemoCrops = [
     { id: 'c1', name: 'Wheat', variety: 'Sharbati HD-2967', season: 'Rabi', health: '95%', status: 'Healthy', badge: 'badge-success' },
@@ -144,6 +150,17 @@ function DashboardOverview() {
                   <p className="text-xs text-muted">Commodity market rates and MSP trends</p>
                 </div>
               </Link>
+
+              <Link to="/dashboard/journal" className="shortcut-btn card flex align-center gap-md">
+                <span className="shortcut-icon">📖</span>
+                <div>
+                  <div className="flex align-center gap-xs">
+                    <strong>Crop Journal & Field Notes</strong>
+                    <span className="badge badge-neutral text-xs">{journalNotes.length} Notes</span>
+                  </div>
+                  <p className="text-xs text-muted">Record field observations, milestones, and treatments</p>
+                </div>
+              </Link>
             </div>
           </section>
         </div>
@@ -218,16 +235,53 @@ function DashboardOverview() {
               </Link>
             </div>
 
-            <div className="activities-list">
-              {demoActivities.map((act) => (
-                <div key={act.id} className="activity-item card flex flex-between">
-                  <div className="flex align-center gap-md">
-                    <span className="activity-icon">{act.icon}</span>
-                    <strong className="activity-title text-sm">{act.title}</strong>
+            {/* Local Tab Bar (Eval 2: Tabs interaction) */}
+            <div className="dash-activity-tabs-bar" role="tablist" aria-label="Activity Filter Tabs">
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activityTab === 'all'}
+                className={`dash-tab-pill ${activityTab === 'all' ? 'active' : ''}`}
+                onClick={() => setActivityTab('all')}
+              >
+                All (4)
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activityTab === 'scheduled'}
+                className={`dash-tab-pill ${activityTab === 'scheduled' ? 'active' : ''}`}
+                onClick={() => setActivityTab('scheduled')}
+              >
+                Scheduled
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activityTab === 'planned'}
+                className={`dash-tab-pill ${activityTab === 'planned' ? 'active' : ''}`}
+                onClick={() => setActivityTab('planned')}
+              >
+                Planned & Upcoming
+              </button>
+            </div>
+
+            <div className="activities-list" role="tabpanel">
+              {demoActivities
+                .filter((act) => {
+                  if (activityTab === 'scheduled') return act.status === 'Scheduled';
+                  if (activityTab === 'planned') return act.status !== 'Scheduled';
+                  return true;
+                })
+                .map((act) => (
+                  <div key={act.id} className="activity-item card flex flex-between">
+                    <div className="flex align-center gap-md">
+                      <span className="activity-icon">{act.icon}</span>
+                      <strong className="activity-title text-sm">{act.title}</strong>
+                    </div>
+                    <span className={`badge ${act.badge} text-xs`}>{act.status}</span>
                   </div>
-                  <span className={`badge ${act.badge} text-xs`}>{act.status}</span>
-                </div>
-              ))}
+                ))}
             </div>
           </section>
         </div>

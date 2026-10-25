@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import FormInput from '../components/FormInput';
 import './Contact.css';
 
 function Contact() {
@@ -149,55 +150,43 @@ function Contact() {
 
                 <form onSubmit={handleSubmit} noValidate>
                   
-                  <div className="form-group">
-                    <label htmlFor="contact-name" className="form-label">
-                      Full Name *
-                    </label>
-                    <input
-                      id="contact-name"
-                      type="text"
-                      name="name"
-                      className={`form-input ${errors.name ? 'input-error' : ''}`}
-                      placeholder="e.g. Ramesh Kumar"
-                      value={formData.name}
-                      onChange={handleChange}
-                    />
-                    {errors.name && <span className="error-message">{errors.name}</span>}
-                  </div>
+                  <FormInput
+                    label="Full Name"
+                    id="contact-name"
+                    name="name"
+                    type="text"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="e.g. Ramesh Kumar"
+                    error={errors.name}
+                    required
+                    autoComplete="name"
+                  />
 
-                 
-                  <div className="form-group">
-                    <label htmlFor="contact-email" className="form-label">
-                      Email Address *
-                    </label>
-                    <input
-                      id="contact-email"
-                      type="email"
-                      name="email"
-                      className={`form-input ${errors.email ? 'input-error' : ''}`}
-                      placeholder="farmer@example.com"
-                      value={formData.email}
-                      onChange={handleChange}
-                    />
-                    {errors.email && <span className="error-message">{errors.email}</span>}
-                  </div>
+                  <FormInput
+                    label="Email Address"
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="farmer@example.com"
+                    error={errors.email}
+                    required
+                    autoComplete="email"
+                  />
 
-                 
-                  <div className="form-group">
-                    <label htmlFor="contact-subject" className="form-label">
-                      Subject / Topic *
-                    </label>
-                    <input
-                      id="contact-subject"
-                      type="text"
-                      name="subject"
-                      className={`form-input ${errors.subject ? 'input-error' : ''}`}
-                      placeholder="e.g. Query on Wheat Sowing Schedule"
-                      value={formData.subject}
-                      onChange={handleChange}
-                    />
-                    {errors.subject && <span className="error-message">{errors.subject}</span>}
-                  </div>
+                  <FormInput
+                    label="Subject / Topic"
+                    id="contact-subject"
+                    name="subject"
+                    type="text"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="e.g. Query on Wheat Sowing Schedule"
+                    error={errors.subject}
+                    required
+                  />
 
                   
                   <div className="form-group">

@@ -1,14 +1,6 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 
-/**
- * ProtectedRoute Component
- * 
- * Demonstrates:
- * - Route protection pattern in React Router
- * - Access control using client-side localStorage state
- * - Conditional redirection with <Navigate to="/login" replace />
- */
 function ProtectedRoute({ children }) {
   // Check if the user is authenticated in localStorage
   const isAuthenticated = localStorage.getItem('isLoggedIn') === 'true';

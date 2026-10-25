@@ -100,6 +100,26 @@
   align-items: center;
 }
 
+/* --------------------------------------------------------------------------
+   Saved Crops count badge on the Crops nav link (Eval 2: Context API)
+   -------------------------------------------------------------------------- */
+.nav-saved-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary-deep);
+  color: var(--color-white);
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 17px;
+  height: 17px;
+  border-radius: var(--radius-full);
+  padding: 0 4px;
+  margin-left: 5px;
+  vertical-align: middle;
+  line-height: 1;
+}
+
 .nav-login-btn {
   padding: 0.45rem 1.15rem;
   font-size: var(--font-size-sm);

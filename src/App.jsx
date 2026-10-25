@@ -14,6 +14,7 @@ import Dashboard from './pages/Dashboard';
 import DashboardOverview from './pages/DashboardOverview';
 import DashboardCrops from './pages/DashboardCrops';
 import DashboardActivities from './pages/DashboardActivities';
+import CropJournal from './pages/CropJournal';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
@@ -45,6 +46,7 @@ function App() {
             <Route path="crops" element={<DashboardCrops />} />
 
             <Route path="activities" element={<DashboardActivities />} />
+            <Route path="journal" element={<CropJournal />} />
           </Route>
 
           <Route path="/about" element={<About />} />

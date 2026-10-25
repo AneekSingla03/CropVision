@@ -200,3 +200,172 @@ export const regionalWeatherData = {
     },
   },
 };
+
+export const REGION_COORDINATES = {
+  punjab: {
+    id: 'punjab',
+    name: 'Punjab (Ludhiana Belt)',
+    regionName: 'Punjab, India',
+    subDistrict: 'Ludhiana Agricultural Belt',
+    lat: 30.9010,
+    lon: 75.8573,
+    timezone: 'Asia/Kolkata',
+  },
+  haryana: {
+    id: 'haryana',
+    name: 'Haryana (Karnal Zone)',
+    regionName: 'Haryana, India',
+    subDistrict: 'Karnal Farming Zone',
+    lat: 29.6857,
+    lon: 76.9905,
+    timezone: 'Asia/Kolkata',
+  },
+  maharashtra: {
+    id: 'maharashtra',
+    name: 'Maharashtra (Nashik Zone)',
+    regionName: 'Maharashtra, India',
+    subDistrict: 'Nashik Horticultural District',
+    lat: 19.9975,
+    lon: 73.7898,
+    timezone: 'Asia/Kolkata',
+  },
+};
+
+/**
+ * Maps WMO Weather Interpretation Codes (WW) returned by Open-Meteo
+ * to human-readable condition text and semantic emoji icons.
+ */
+export function getWmoWeatherDetails(code, isDay = 1) {
+  const numericCode = Number(code);
+  switch (numericCode) {
+    case 0:
+      return {
+        condition: isDay ? 'Clear Sky' : 'Clear Sky (Night)',
+        icon: isDay ? '☀️' : '🌙',
+      };
+    case 1:
+      return {
+        condition: 'Mainly Clear',
+        icon: isDay ? '🌤️' : '🌙',
+      };
+    case 2:
+      return {
+        condition: 'Partly Cloudy',
+        icon: '⛅',
+      };
+    case 3:
+      return {
+        condition: 'Overcast',
+        icon: '☁️',
+      };
+    case 45:
+      return {
+        condition: 'Foggy',
+        icon: '🌫️',
+      };
+    case 48:
+      return {
+        condition: 'Depositing Rime Fog',
+        icon: '🌫️',
+      };
+    case 51:
+      return {
+        condition: 'Light Drizzle',
+        icon: '🌦️',
+      };
+    case 53:
+      return {
+        condition: 'Moderate Drizzle',
+        icon: '🌦️',
+      };
+    case 55:
+      return {
+        condition: 'Dense Drizzle',
+        icon: '🌧️',
+      };
+    case 56:
+    case 57:
+      return {
+        condition: 'Freezing Drizzle',
+        icon: '🌨️',
+      };
+    case 61:
+      return {
+        condition: 'Slight Rain',
+        icon: '🌦️',
+      };
+    case 63:
+      return {
+        condition: 'Moderate Rain',
+        icon: '🌧️',
+      };
+    case 65:
+      return {
+        condition: 'Heavy Rain',
+        icon: '🌧️',
+      };
+    case 66:
+    case 67:
+      return {
+        condition: 'Freezing Rain',
+        icon: '🌨️',
+      };
+    case 71:
+      return {
+        condition: 'Slight Snowfall',
+        icon: '🌨️',
+      };
+    case 73:
+      return {
+        condition: 'Moderate Snowfall',
+        icon: '❄️',
+      };
+    case 75:
+      return {
+        condition: 'Heavy Snowfall',
+        icon: '❄️',
+      };
+    case 77:
+      return {
+        condition: 'Snow Grains',
+        icon: '🌨️',
+      };
+    case 80:
+      return {
+        condition: 'Slight Rain Showers',
+        icon: '🌦️',
+      };
+    case 81:
+      return {
+        condition: 'Moderate Rain Showers',
+        icon: '🌧️',
+      };
+    case 82:
+      return {
+        condition: 'Violent Rain Showers',
+        icon: '⛈️',
+      };
+    case 85:
+    case 86:
+      return {
+        condition: 'Snow Showers',
+        icon: '❄️',
+      };
+    case 95:
+      return {
+        condition: 'Thunderstorm',
+        icon: '⛈️',
+      };
+    case 96:
+    case 99:
+      return {
+        condition: 'Severe Thunderstorm with Hail',
+        icon: '⛈️',
+      };
+    default:
+      return {
+        condition: 'Variable Weather',
+        icon: '🌤️',
+      };
+  }
+}

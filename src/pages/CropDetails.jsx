@@ -1,17 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { crops } from '../data/crops';
+import { useSavedCrops } from '../context/SavedCropsContext';
+import { useToast } from '../context/ToastContext';
+import Modal from '../components/Modal';
 import './CropDetails.css';
-
 
 function CropDetails() {
   
   const { cropId } = useParams();
 
-  
+  // Global saved-crops state and toast context
+  const { isCropSaved, saveCrop, removeCrop } = useSavedCrops();
+  const { showToast } = useToast();
+
+  // Confirmation modal state
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const crop = crops.find(
     (c) => c.id.toLowerCase() === cropId?.toLowerCase()
   );
+
+  const handleSaveCrop = () => {
+    saveCrop(crop.id);
+    showToast(`Added ${crop.name} to saved crops`, 'success');
+  };
+
+  const handleConfirmRemove = () => {
+    removeCrop(crop.id);
+    setIsModalOpen(false);
+    showToast(`Removed ${crop.name} from saved crops`, 'info');
+  };
 
   // Fallback handler if image fails to load
   const handleImageError = (e) => {
@@ -82,7 +101,54 @@ function CropDetails() {
               <h1 className="crop-details-title">{crop.name}</h1>
               <p className="crop-details-description">{crop.description}</p>
 
-              
+              {/* Save / Unsave — reads and writes global SavedCropsContext */}
+              <div style={{ marginBottom: '1.25rem' }}>
+                {isCropSaved(crop.id) ? (
+                  <button
+                    type="button"
+                    className="btn btn-primary btn-sm"
+                    onClick={() => setIsModalOpen(true)}
+                  >
+                    🌿 Saved — Remove
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className="btn btn-outline btn-sm"
+                    onClick={handleSaveCrop}
+                  >
+                    + Save this Crop
+                  </button>
+                )}
+              </div>
+
+              {/* Confirmation Modal for Removing Crop */}
+              <Modal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                title="Remove Saved Crop"
+              >
+                <p style={{ margin: '0 0 1.25rem', lineHeight: '1.5' }}>
+                  Are you sure you want to remove <strong>{crop.name}</strong> from your saved crops list?
+                </p>
+                <div className="modal-actions" style={{ margin: '-1.5rem', marginTop: '1.25rem', padding: '1rem 1.5rem' }}>
+                  <button
+                    type="button"
+                    className="btn btn-secondary btn-sm"
+                    onClick={() => setIsModalOpen(false)}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-primary btn-sm"
+                    onClick={handleConfirmRemove}
+                  >
+                    Confirm Remove
+                  </button>
+                </div>
+              </Modal>
+
               <div className="quick-metrics-grid">
                 <div className="metric-pill">
                   <span className="metric-icon">🌡️</span>

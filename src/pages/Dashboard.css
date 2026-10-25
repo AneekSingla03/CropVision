@@ -390,3 +390,40 @@
     gap: 0.5rem;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Local Tab Bar for Activities (Eval 2: Tabs interaction)
+   -------------------------------------------------------------------------- */
+.dash-activity-tabs-bar {
+  display: flex;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  background-color: var(--color-surface-muted);
+  padding: 0.3rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.dash-tab-pill {
+  flex: 1;
+  text-align: center;
+  padding: 0.4rem 0.6rem;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dash-tab-pill:hover {
+  color: var(--color-primary-deep);
+}
+
+.dash-tab-pill.active {
+  background-color: var(--color-white);
+  color: var(--color-primary-deep);
+  box-shadow: var(--shadow-xs);
+}

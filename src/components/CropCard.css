@@ -90,3 +90,43 @@
   justify-content: center;
   font-weight: 600;
 }
+
+/* --------------------------------------------------------------------------
+   Save / Unsave Button — overlaid on the image (Eval 2: Context API)
+   -------------------------------------------------------------------------- */
+.crop-save-btn {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 0.6rem;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  color: var(--color-primary-deep);
+  border: 1px solid var(--color-primary-border);
+  border-radius: var(--radius-full);
+  padding: 0.22rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast),
+    border-color var(--transition-fast);
+  white-space: nowrap;
+  box-shadow: var(--shadow-xs);
+}
+
+.crop-save-btn:hover {
+  background-color: var(--color-primary-subtle);
+  border-color: var(--color-secondary-green);
+}
+
+/* Saved state — green fill */
+.crop-save-btn--saved {
+  background-color: var(--color-primary-deep);
+  color: var(--color-white);
+  border-color: var(--color-primary-deep);
+}
+
+.crop-save-btn--saved:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}

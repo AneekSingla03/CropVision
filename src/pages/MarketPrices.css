@@ -58,14 +58,15 @@
 }
 
 .filter-controls-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   align-items: center;
   margin-bottom: 1.25rem;
 }
 
 .market-search-box {
+  flex: 1 1 260px;
   position: relative;
   display: flex;
   align-items: center;
@@ -124,6 +125,26 @@
   background-color: var(--color-error);
   border-color: var(--color-error);
   color: var(--color-white);
+}
+
+.market-sort-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.market-sort-box .sort-label {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.market-sort-select {
+  height: 40px;
+  font-size: var(--font-size-xs);
+  padding: 0.45rem 2.2rem 0.45rem 0.8rem;
+  min-width: 175px;
 }
 
 .market-category-row {
@@ -339,7 +360,17 @@
   }
 
   .filter-controls-row {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .market-sort-box {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .market-sort-select {
+    flex: 1;
   }
 }
 

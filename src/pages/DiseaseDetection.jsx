@@ -1,7 +1,16 @@
 import React from 'react';
+import { useToast } from '../context/ToastContext';
 import './DiseaseDetection.css';
 
 function DiseaseDetection() {
+  const { showToast } = useToast();
+
+  const handleActionNotice = () => {
+    showToast(
+      'AI Image Analysis model is planned for future phases. Please explore the Crop Journal, Live Weather, and Catalog.',
+      'info'
+    );
+  };
   
   const plannedSteps = [
     {
@@ -97,6 +106,7 @@ function DiseaseDetection() {
               <button
                 type="button"
                 className="btn btn-secondary btn-lg static-choose-btn"
+                onClick={handleActionNotice}
               >
                 📁 Choose Image
               </button>
@@ -104,6 +114,7 @@ function DiseaseDetection() {
               <button
                 type="button"
                 className="btn btn-primary btn-lg static-analyze-btn"
+                onClick={handleActionNotice}
               >
                 Analyze Crop 🔬
               </button>
